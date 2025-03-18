@@ -3,6 +3,7 @@ import Image from "next/image";
 import backgroundImage from "@/assets/background.jpg";
 import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "@/components/NavBar";
 import logo from "@/assets/logo.png"
 import bg from "@/assets/bg.jpg"
@@ -65,11 +66,10 @@ export default function Home() {
     setShowForm(true);
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    setShowForm(false);
-  };
+ const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setShowForm(false);
+  };  
 
   return (
     <div className="relative w-full overflow-hidden">
