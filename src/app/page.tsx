@@ -165,7 +165,7 @@ export default function Home() {
             style={{ backgroundImage: `url(${card.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] shadow-lg flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-3xl font-bold text-purple-950 mb-4">PROMOTION IMMOBILIÈRE</h3>
+              <h3 className="text-2xl font-bold text-purple-950 mb-4" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>PROMOTION IMMOBILIERE</h3>
               <button className="mt-2 px-6 py-2 w-full text-left text-black hover:text-blue-600 rounded-lg transition duration-300" onClick={() => window.location.href = '#details1'}>
                 Voir détails
               </button>
@@ -178,7 +178,7 @@ export default function Home() {
             style={{ backgroundImage: `url(${card2.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-3xl font-bold  text-purple-950 mb-2">MAÎTRISE D’OUVRAGE DÉLÉGUÉE</h3>
+              <h3 className="text-2xl font-bold  text-purple-950 mb-2" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>MAITRISE D’OUVRAGE DELEGUEE</h3>
               <button className="mt-2 py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" onClick={() => window.location.href = '#details2'}>
                 Voir détails
               </button>
@@ -192,7 +192,7 @@ export default function Home() {
             style={{ backgroundImage: `url(${card3.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-3xl font-bold  text-purple-950 mb-4">CONSEIL EN INVESTISSEMENT</h3>
+              <h3 className="text-2xl font-bold  text-purple-950 mb-4"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>CONSEIL EN INVESTISSEMENT</h3>
               <button className="mt-2  py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300">
                 Voir détails
               </button>
