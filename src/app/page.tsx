@@ -227,7 +227,7 @@ export default function Home() {
           <div className="flex md:flex-row flex-col gap-8 transition-transform duration-500">
             {getVisibleSlides().map((slide, index) => (
               <div key={index} className="md:w-1/3">
-                <div className="bg-[#CCCBCB] p-7 shadow-lg h-full"> 
+                <div className="bg-[#CCCBCB] p-7 shadow-lg h-full flex flex-col justify-between"> 
                   {slide.images ? (
                     <div className="flex space-x-2 mt-4">
                       {slide.images.map((src, idx) => (
@@ -235,9 +235,9 @@ export default function Home() {
                       ))}
                     </div>
                   ) : (
-                    <img src={slide.image} alt={`Slide ${index} Image`} className="w-full h-64 object-cover mt-10" />
+                    <img src={slide.image} alt={`Slide ${index} Image`} className="w-full h-48 object-cover mt-4" />
                   )}
-                  <h3 className="text-2xl mt-24 font-bold text-gray-900 mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Raleway', fontWeight: 'lighter' }}>
                     {slide.title}
                   </h3>
                   <p className="text-gray-700 mb-4"> - {slide.date}</p>
