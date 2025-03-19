@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Navbar from "@/components/NavBar";
 import logo from "@/assets/Arena-logo.png"
+import Alogo from "@/assets/A-logo.png"
 import bg from "@/assets/bg.jpg"
 import aboutbg from "@/assets/aboutus_bg.png"
 import card from "@/assets/card.jpg"
@@ -32,6 +33,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 import Sanam from "@/assets/Sanam holding.png"
 import alaliamaak from "@/assets/Al-Alia-maak.jpg"
 import "@/app/globals.css";
+import { url } from "inspector";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -171,7 +173,7 @@ export default function Home() {
       </section>
       {/* Section : Nos-Metiers */}
       <section id="nos-metiers" className="py-16 text-center">
-        <h2 className="text-4xl  text-gray-900 mb-12">NOS METIERS</h2>
+        <h2 className="text-4xl  text-gray-900 mb-12" style={{ fontFamily: 'Romelio' }}>NOS METIERS</h2>
         <div className="flex gap-4 max-w-full mx-0 px-0">
           {/* Card 1 */}
           <div
@@ -216,18 +218,28 @@ export default function Home() {
       </section>
 
       {/* Section : Nos-Marques */}
-      <section id="nos-marques"
-  className="relative py-16 text-center bg-cover bg-center min-h-screen bg-[#003851] flex justify-center items-center gap-6">
-  
-  <img src={oartf.src} alt="im1" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
-  <img src={oalia.src} alt="im2" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
-  <img src={opalm.src} alt="im3" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
-  <img src={owork.src} alt="im4" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+      <section 
+  id="nos-marques" 
+  className="marque py-16 text-center flex flex-col justify-center items-center"
+  style={{ 
+    "--bg-image-url": `url(${Alogo.src})`
+  } as React.CSSProperties}
+>
+  <h2 className="text-4xl text-white mb-[6%] mt-[-4%]" style={{ fontFamily: 'Romelio' }}>
+    NOS MARQUES
+  </h2>
+
+  <div className="flex justify-center items-center gap-6">
+    <img src={oartf.src} alt="im1" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+    <img src={oalia.src} alt="im2" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+    <img src={opalm.src} alt="im3" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+    <img src={owork.src} alt="im4" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+  </div>
 </section>
 
 
       {/* Section : Actualites */}
-      <h2 className="text-4xl  text-center m-12">ACTUALITES</h2>
+      <h2 className="text-4xl  text-center m-12"style={{ fontFamily: 'Romelio' }}>ACTUALITES</h2>
       <section id="actualites" className="py-16 w-full bg-[#034E59] relative min-h-[600px] ">
 
 
@@ -370,7 +382,7 @@ export default function Home() {
               { text: "CARRIÈRE", id: "carriere" },
               { text: "CONTACT", id: "contact" },
             ].map((link, index) => (
-              <a key={index} href={`#${link.id}`} className="text-lg hover:underline">
+              <a key={index} href={`#${link.id}`} className="text-lg hover:underline"style={{marginRight:'-40px', fontFamily: 'Raleway', fontSize: '14px', letterSpacing: '5px'}}>
                 {link.text}
               </a>
             ))}
