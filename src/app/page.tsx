@@ -262,28 +262,36 @@ export default function Home() {
         <div className="w-full max-w-8xl mx-auto px-4">
           <div className="flex md:flex-row flex-col  transition-transform duration-500 gap-0 ml-[5%]">
           {getVisibleSlides().map((slide, index) => (
-          <div key={index} className="md:w-1/3 px-1">
-            <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
-              <div className="bg-[#cccbcb] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
-                {slide.images ? (
-                  <div className="flex space-x-2 mt-4">
-                    {slide.images.map((src, idx) => (
-                      <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-1/3 h-48 object-cover mb-6" />
-                    ))}
-                  </div>
-                ) : (
-                  <img src={slide.image} alt={`Slide ${index} Image`} className="w-[350px] h-48 object-contain mt-4" />
-                )}
-                <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px', fontWeight: 'bold'}}>
-                  {slide.title}
-                </h3>
-                <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
-                  <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
-                  {slide.date}
-                </p>
-              </div>
-            </a>
-          </div>
+         <div key={index} className="md:w-1/3 px-1">
+           <div className="bg-[#cccbcb] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
+         <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
+             {slide.images ? (
+               <div className="flex space-x-2 mt-4">
+                 {slide.images.map((src, idx) => (
+                   <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-[133px] h-48 object-cover mb-6 mt-4" />
+                 ))}
+               </div>
+             ) : (
+               <div className="flex justify-start"> {/* Wrapper to align the image */}
+                 <img 
+                   src={slide.image} 
+                   alt={`Slide ${index} Image`} 
+                   className="w-[26 0px] h-[210px] object-contain mb-4 mt-2" 
+                 />
+               </div>
+             )}
+             <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px', fontWeight: 'bold'}}>
+               {slide.title}
+             </h3>
+             <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
+               <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
+               {slide.date}
+             </p>
+         </a>
+           </div>
+       </div>
+       
+        
         ))}
           </div>
         </div>
@@ -302,7 +310,7 @@ export default function Home() {
       >
         {!showForm ? (
           <button 
-            className=" px-6 py-2 hover:bg-custom-blue hover:text-white text-4xl text-custom-blue border-2 border-custom-blue transform mt-64 -translate-y-12"  
+            className=" px-6 py-2 hover:bg-[#003851] hover:text-white text-4xl text-custom-blue border-2 border-custom-blue transform mt-64 -translate-y-12"  
             onClick={handleContactClick}
           >
             CONTACTEZ-NOUS
@@ -350,7 +358,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <button 
                 type="submit" 
-                className="bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-[#003851] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Envoyer
               </button>
@@ -361,7 +369,7 @@ export default function Home() {
 
 
       {/* Section : Footer */}
-      <footer className="bg-custom-blue text-white py-8 ">
+      <footer className="bg-[#003851] text-white py-8 ">
         <div className="flex   justify-between items-end">
           <div className="text-left">
             <div className="flex flex-row">

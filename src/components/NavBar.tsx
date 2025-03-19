@@ -4,7 +4,7 @@ import logo from '@/assets/logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="absolute top-0 left-0 right-0 z-30 bg-custom-blue shadow-sm w-full">
+    <nav className="absolute top-0 left-0 right-0 z-30 bg-[#003851] shadow-sm w-full">
       <div className="w-full px-8">
         <div className="flex items-center justify-center py-4 w-full relative">
           
