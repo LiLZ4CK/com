@@ -266,9 +266,9 @@ export default function Home() {
            <div className="bg-[#cccbcb] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
          <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
              {slide.images ? (
-               <div className="flex space-x-2 mt-4">
+               <div className="flex space-x-2 mt-2">
                  {slide.images.map((src, idx) => (
-                   <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-[133px] h-48 object-cover mb-6 mt-4" />
+                   <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-[133px] h-48 object-cover mb-2 mt-2" />
                  ))}
                </div>
              ) : (
@@ -276,14 +276,14 @@ export default function Home() {
                  <img 
                    src={slide.image} 
                    alt={`Slide ${index} Image`} 
-                   className="w-[26 0px] h-[210px] object-contain mb-4 mt-2" 
+                   className="h-[210px] object-contain mb-3 mt-0" 
                  />
                </div>
              )}
-             <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px', fontWeight: 'bold'}}>
+             <h3 className="text-base text-gray-900 mt-0" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px', fontWeight: 'bold'}}>
                {slide.title}
              </h3>
-             <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
+             <p className="text-gray-700 mt-6 mb-2 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
                <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
                {slide.date}
              </p>
