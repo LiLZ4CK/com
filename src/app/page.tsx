@@ -9,9 +9,11 @@ import logo from "@/assets/Arena-logo.png"
 import Alogo from "@/assets/A-logo.png"
 import bg from "@/assets/bg.jpg"
 import aboutbg from "@/assets/aboutus_bg.png"
-import card from "@/assets/card.jpg"
-import card2 from "@/assets/card2.jpg"
-import card3 from "@/assets/card3.jpg"
+
+import card from "@/assets/analog-landscape-city-with-buildings.jpg"
+import card3 from "@/assets/business-people-working-with-ipad-high-angle.jpg"
+import card2 from "@/assets/side-view-old-architect-with-building-plans.jpg"
+
 import alalia from "@/assets/Al-Alia.jpg"
 import palms from "@/assets/Palms.jpg"
 import workin from "@/assets/workin.jpg"
@@ -115,6 +117,7 @@ export default function Home() {
       <section
         id="notre-groupe"
         className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: '#fafafa' , backgroundSize: '140%' }}
       >
 
         <h2 className="text-4xl font-medium text-[#141C48] mb-4">QUI SOMMES NOUS?</h2>
@@ -183,7 +186,7 @@ export default function Home() {
             className="relative bg-cover flex-grow bg-left h-[700px] w-[650px] bg-no-repeat overflow-hidden"
             style={{ backgroundImage: `url(${card.src})`, backgroundSize: 'cover' }}
           >
-            <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] shadow-lg flex-col items-center justify-center p-6 text-left">
+            <div className="absolute inset-0 bg-white flex w-[400px] top-[60%] h-[200px] shadow-lg flex-col items-center justify-center p-6 text-left">
               <h3 className="text-2xl font-bold text-purple-950" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>PROMOTION IMMOBILIERE</h3>
               <button className="ml-[-12px]px-6 py-2 w-full text-left text-black hover:text-blue-600 rounded-lg transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}} onClick={() => window.location.href = '#details1'}>
                 Voir détails
@@ -196,7 +199,7 @@ export default function Home() {
             className="relative bg-cover flex-grow bg-center h-[700px] w-[650px] shadow-lg bg-no-repeat overflow-hidden"
             style={{ backgroundImage: `url(${card2.src})`, backgroundSize: 'cover' }}
           >
-            <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
+            <div className="absolute inset-0 bg-white flex w-[400px] top-[60%] h-[200px] flex-col items-center justify-center p-6 text-left">
               <h3 className="text-2xl font-bold  text-purple-950" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>MAITRISE D’OUVRAGE DELEGUEE</h3>
               <button className="py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}} onClick={() => window.location.href = '#details2'}>
                 Voir détails
@@ -210,7 +213,7 @@ export default function Home() {
             className="relative bg-cover flex-grow bg-right h-[700px] w-[650px] shadow-lg bg-no-repeat overflow-hidden"
             style={{ backgroundImage: `url(${card3.src})`, backgroundSize: 'cover' }}
           >
-            <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
+            <div className="absolute inset-0 bg-white flex w-[400px] top-[60%] h-[200px] flex-col items-center justify-center p-6 text-left">
               <h3 className="text-2xl font-bold  text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>CONSEIL EN INVESTISSEMENT</h3>
               <button className="py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}>
                 Voir détails
@@ -242,8 +245,8 @@ export default function Home() {
 
 
       {/* Section : Actualites */}
-      <h2 className="text-4xl  text-center m-12"style={{ fontFamily: 'Romelio' }}>ACTUALITES</h2>
-      <section id="actualites" className="py-16 w-full bg-[#034E59] relative min-h-[600px] ">
+      <h2 className="text-4xl  text-center m-12"style={{ color: '#023a41',fontFamily: 'Romelio' }}>ACTUALITES</h2>
+      <section id="actualites" className="py-16 w-full bg-[#034e58] relative min-h-[600px] ">
 
 
         {/* Arrow Buttons */}
@@ -261,7 +264,7 @@ export default function Home() {
           {getVisibleSlides().map((slide, index) => (
           <div key={index} className="md:w-1/3 px-1">
             <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
-              <div className="bg-[#CCCBCB] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
+              <div className="bg-[#cccbcb] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
                 {slide.images ? (
                   <div className="flex space-x-2 mt-4">
                     {slide.images.map((src, idx) => (
