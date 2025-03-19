@@ -44,19 +44,23 @@ export default function Home() {
       images: [alalia.src, palms.src, workin.src],
       title: "Immobilier : Arena lance un programme durable de 5 milliards de dirhams à Casablanca",
       date: "29/10/2024",
-      press: aeco.src
+      press: aeco.src,
+      link: "https://leseco.ma/business/immobilier-arena-lance-un-programme-durable-de-5-milliards-de-dirhams-a-casablanca.html"
     },
     {
       image: Sanam.src,
       title: "Immobilier: le groupe Sanam s'associe avec Aevitas, le gestionnaire néerlandais de fonds de pension américains",
       date: "11/06/2020",
-      press: a360.src
+      press: a360.src,
+      link: "https://fr.le360.ma/economie/immobilier-le-groupe-sanam-sassocie-avec-aevitas-le-gestionnaire-neerlandais-de-fonds-de-pension-217011/"
+
     },
     {
       image: alaliamaak.src,
       title: "Covid-19 : Al Alia immobilier se mobilise pour aider financièrement ses acquéreurs",
       date: "22/07/2020",
-      press: am24.src
+      press: am24.src,
+      link: "https://medias24.com/2020/04/13/al-alia-immobilier-15-mdh-pour-soutenir-les-residents-les-plus-fragilises/"
     }
   ];
 
@@ -111,7 +115,6 @@ export default function Home() {
       <section
         id="notre-groupe"
         className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${aboutbg.src})` }}
       >
 
         <h2 className="text-4xl font-medium text-[#141C48] mb-4">QUI SOMMES NOUS?</h2>
@@ -255,28 +258,30 @@ export default function Home() {
 
         <div className="w-full max-w-8xl mx-auto px-4">
           <div className="flex md:flex-row flex-col  transition-transform duration-500 gap-0 ml-[5%]">
-            {getVisibleSlides().map((slide, index) => (
-              <div key={index} className="md:w-1/3 px-1">
-                <div className="bg-[#CCCBCB] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between">
-                  {slide.images ? (
-                    <div className="flex space-x-2 mt-4">
-                      {slide.images.map((src, idx) => (
-                        <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-1/3 h-48 object-cover mb-6" />
-                      ))}
-                    </div>
-                  ) : (
-                      <img src={slide.image} alt={`Slide ${index} Image`} className="w-[350px] h-48 object-contain mt-4" />
-                  )}
-                  <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px',fontWeight: 'bold'}}>
-                    {slide.title}
-                  </h3>
-                  <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
-                    <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
-                      {slide.date}
-                  </p>
-                </div>
+          {getVisibleSlides().map((slide, index) => (
+          <div key={index} className="md:w-1/3 px-1">
+            <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
+              <div className="bg-[#CCCBCB] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
+                {slide.images ? (
+                  <div className="flex space-x-2 mt-4">
+                    {slide.images.map((src, idx) => (
+                      <img key={idx} src={src} alt={`Slide ${index} Image ${idx}`} className="w-1/3 h-48 object-cover mb-6" />
+                    ))}
+                  </div>
+                ) : (
+                  <img src={slide.image} alt={`Slide ${index} Image`} className="w-[350px] h-48 object-contain mt-4" />
+                )}
+                <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px', fontWeight: 'bold'}}>
+                  {slide.title}
+                </h3>
+                <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
+                  <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
+                  {slide.date}
+                </p>
               </div>
-            ))}
+            </a>
+          </div>
+        ))}
           </div>
         </div>
       </section>
@@ -286,12 +291,15 @@ export default function Home() {
 
       {/* Section : Contact */}
       <section id="contact"
-        className="relative flex justify-center items-start min-h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${contactus.src})` }}
+        className="relative flex justify-center items-start min-h-screen bg-cover bg-center "
+        style={{ 
+          backgroundImage: `url(${contactus.src})`, 
+          backgroundSize: "130%"
+        }}
       >
         {!showForm ? (
           <button 
-            className="mt-80 px-6 py-2 hover:bg-custom-blue hover:text-white text-4xl text-custom-blue border-2 border-custom-blue transform -translate-y-10"
+            className=" px-6 py-2 hover:bg-custom-blue hover:text-white text-4xl text-custom-blue border-2 border-custom-blue transform mt-64 -translate-y-12"  
             onClick={handleContactClick}
           >
             CONTACTEZ-NOUS

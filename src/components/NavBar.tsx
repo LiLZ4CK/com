@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex items-center justify-center py-4 w-full relative">
           
           {/* Navigation Links (Left) */}
-          <div className="flex space-x-12">
+          <div className="flex space-x-12 whitespace-nowrap">
             <Link href="#notre-groupe" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               NOTRE GROUPE
             </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links (Right) */}
-          <div className="flex space-x-12">
+          <div className="flex space-x-12 whitespace-nowrap">
             <Link href="#nos-marques" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               NOS MARQUES
             </Link>
