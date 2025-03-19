@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
 import React from "react";
 import Navbar from "@/components/NavBar";
-import logo from "@/assets/logo.png"
+import logo from "@/assets/Arena-logo.png"
 import bg from "@/assets/bg.jpg"
 import aboutbg from "@/assets/aboutus_bg.png"
 import card from "@/assets/card.jpg"
@@ -14,6 +14,16 @@ import card3 from "@/assets/card3.jpg"
 import alalia from "@/assets/Al-Alia.jpg"
 import palms from "@/assets/Palms.jpg"
 import workin from "@/assets/workin.jpg"
+
+import oartf from "@/assets/Artof.png"
+import oalia from "@/assets/Nos-marques-logos-al-alia.png"
+import opalm from "@/assets/Nos-marques-logos-Palms.png"
+import owork from "@/assets/Nos-marques-logos-Workin.png"
+
+import aeco from "@/assets/ÉCO.ma_.png"
+import a360 from "@/assets/le360.svg"
+import am24 from "@/assets/logo.m24.png"
+
 import nosmarques from "@/assets/nosmarques.png"
 import contactus from "@/assets/contactus.png"
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -21,7 +31,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import Sanam from "@/assets/Sanam holding.png"
 import alaliamaak from "@/assets/Al-Alia-maak.jpg"
-import "@/app/globals.css"; // Import the global CSS file
+import "@/app/globals.css";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,17 +41,20 @@ export default function Home() {
     {
       images: [alalia.src, palms.src, workin.src],
       title: "Immobilier : Arena lance un programme durable de 5 milliards de dirhams à Casablanca",
-      date: "29/10/2024"
+      date: "29/10/2024",
+      press: aeco.src
     },
     {
       image: Sanam.src,
       title: "Immobilier: le groupe Sanam s'associe avec Aevitas, le gestionnaire néerlandais de fonds de pension américains",
-      date: "11/06/2020"
+      date: "11/06/2020",
+      press: a360.src
     },
     {
       image: alaliamaak.src,
       title: "Covid-19 : Al Alia immobilier se mobilise pour aider financièrement ses acquéreurs",
-      date: "22/07/2020"
+      date: "22/07/2020",
+      press: am24.src
     }
   ];
 
@@ -87,7 +100,7 @@ export default function Home() {
         </p>
 
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-6">
-          <img src={logo.src} alt="Logo" className="h-16 w-auto" />
+          <img src={logo.src} alt="Logo" style={{opacity: 0.5, width: '270px', height: 'auto'}}/>
         </div>
       </section>
 
@@ -101,19 +114,20 @@ export default function Home() {
 
         <h2 className="text-4xl font-medium text-[#141C48] mb-4">QUI SOMMES NOUS?</h2>
 
-        <p className="text-xl text-[#141C48] max-w-6xl leading-relaxed mb-4 font-lighter" style={{ fontFamily: 'Raleway', lineHeight: '2.5', letterSpacing: '1px' }}>  
+        <p className="text-xl text-[#141C48] max-w-10xl" style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px', lineHeight: '46px'}} >  
           Arena Property Development est une société marocaine de promotion immobilière qui s’impose<br />
           comme un acteur clé du secteur. Née avec une ambition claire de redéﬁnir les standards de<br />
           l’immobilier, Arena combine innovation, qualité et engagement envers la durabilité pour transformer<br />
           les espaces de vie au Maroc.
         </p>
-
-        <p className="text-xl text-[#141C48] max-w-6xl leading-relaxed mb-6"style={{ fontFamily: 'Raleway', fontWeight: 'lighter', lineHeight: '2.5', letterSpacing: '1px' }}> 
+        <br />
+        <br />
+        <p className="text-xl text-[#141C48] poppins-light max-w-10xl  mb-6" style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px', lineHeight: '46px'}} > 
           Le groupe se distingue par sa capacité à conjuguer des visions locales et internationales grâce à des<br />
           partenariats stratégiques solides.
         </p>
 
-        <button className="mt-4 px-6 py-2 text-lg border border-[#141C48] text-[#141C48] rounded-md hover:text-white hover:bg-[#141C48] transition">
+        <button className="mt-4 px-6 py-2 text-lg border border-[#141C48] text-[#141C48]  hover:text-white hover:bg-[#141C48] transition"style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px'}} >
           En savoir plus
         </button>
       </section>
@@ -131,25 +145,25 @@ export default function Home() {
 
           {/* Stat 1 */}
           <div className="flex flex-col items-center mt-[45%]">
-            <span className="text-8xl md:text-9xl font-medium">100</span>
-            <p className="text-lg md:text-xl mt-4 max-w-xs">
+            <span className="text-8xl md:text-9xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
+            <p className="text-lg md:text-xl mt-4 max-w-[240px]" style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
               Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans le secteur de l’immobilier
             </p>
           </div>
 
           {/* Stat 2 */}
           <div className="flex flex-col items-center mt-[45%]">
-            <span className="text-8xl md:text-9xl font-medium">80</span>
-            <p className="text-lg md:text-xl mt-4 max-w-xs">
+            <span className="text-8xl md:text-9xl font-medium"style={{ fontFamily: 'Romelio' }}>80</span>
+            <p className="text-lg md:text-xl mt-4 max-w-[240px]" style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
               Une équipe de 80 professionnels hautement qualifiés et dédiés à l’excellence
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="flex flex-col items-center mt-[45%]">
-            <span className="text-8xl md:text-9xl font-medium">20K</span>
-            <p className="text-lg md:text-xl mt-4 max-w-xs">
-              Construction de plus de 20 000 unités résidentielles, contribuant à façonner des communautés dynamiques
+            <span className="text-8xl md:text-9xl font-medium"style={{ fontFamily: 'Romelio' }}>20K</span>
+            <p className="text-lg md:text-xl mt-4 max-w-[240px]" style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
+              Construction de plus de 20000 unités résidentielles, contribuant à façonner des communautés dynamiques
             </p>
           </div>
 
@@ -165,8 +179,8 @@ export default function Home() {
             style={{ backgroundImage: `url(${card.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] shadow-lg flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-2xl font-bold text-purple-950 mb-4" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>PROMOTION IMMOBILIERE</h3>
-              <button className="mt-2 px-6 py-2 w-full text-left text-black hover:text-blue-600 rounded-lg transition duration-300" onClick={() => window.location.href = '#details1'}>
+              <h3 className="text-2xl font-bold text-purple-950" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>PROMOTION IMMOBILIERE</h3>
+              <button className="ml-[-12px]px-6 py-2 w-full text-left text-black hover:text-blue-600 rounded-lg transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}} onClick={() => window.location.href = '#details1'}>
                 Voir détails
               </button>
             </div>
@@ -178,8 +192,8 @@ export default function Home() {
             style={{ backgroundImage: `url(${card2.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-2xl font-bold  text-purple-950 mb-2" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>MAITRISE D’OUVRAGE DELEGUEE</h3>
-              <button className="mt-2 py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" onClick={() => window.location.href = '#details2'}>
+              <h3 className="text-2xl font-bold  text-purple-950" style={{letterSpacing: '2px', fontWeight: 'lighter'}}>MAITRISE D’OUVRAGE DELEGUEE</h3>
+              <button className="py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}} onClick={() => window.location.href = '#details2'}>
                 Voir détails
               </button>
             </div>
@@ -192,8 +206,8 @@ export default function Home() {
             style={{ backgroundImage: `url(${card3.src})`, backgroundSize: 'cover' }}
           >
             <div className="absolute inset-0 bg-white flex w-[400px] top-[40%] h-[200px] flex-col items-center justify-center p-6 text-left">
-              <h3 className="text-2xl font-bold  text-purple-950 mb-4"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>CONSEIL EN INVESTISSEMENT</h3>
-              <button className="mt-2  py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300">
+              <h3 className="text-2xl font-bold  text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>CONSEIL EN INVESTISSEMENT</h3>
+              <button className="py-2 w-full text-left text-black rounded-lg hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}>
                 Voir détails
               </button>
             </div>
@@ -203,15 +217,19 @@ export default function Home() {
 
       {/* Section : Nos-Marques */}
       <section id="nos-marques"
-        className="relative py-16 text-center bg-cover bg-center min-h-screen"
-        style={{ backgroundImage: `url(${nosmarques.src})` }}
-      >
-      </section>
+  className="relative py-16 text-center bg-cover bg-center min-h-screen bg-[#003851] flex justify-center items-center gap-6">
+  
+  <img src={oartf.src} alt="im1" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+  <img src={oalia.src} alt="im2" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+  <img src={opalm.src} alt="im3" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+  <img src={owork.src} alt="im4" className="w-1/5 h-auto opacity-50 transition duration-300 hover:opacity-100 hover:scale-110" />
+</section>
 
 
       {/* Section : Actualites */}
-      <h2 className="text-4xl font-bold text-black text-center m-12">ACTUALITES</h2>
-      <section id="actualites" className="py-16 w-full bg-[#034E59] relative">
+      <h2 className="text-4xl  text-center m-12">ACTUALITES</h2>
+      <section id="actualites" className="py-16 w-full bg-[#034E59] relative min-h-[600px] ">
+
 
         {/* Arrow Buttons */}
         <button onClick={handlePrevClick} className="absolute m-5 left-0 top-1/2 transform -translate-y-1/2  p-4">
@@ -223,11 +241,11 @@ export default function Home() {
 
 
 
-        <div className="w-full max-w-7xl mx-auto px-8">
-          <div className="flex md:flex-row flex-col gap-8 transition-transform duration-500">
+        <div className="w-full max-w-8xl mx-auto px-4">
+          <div className="flex md:flex-row flex-col  transition-transform duration-500 gap-0 ml-[5%]">
             {getVisibleSlides().map((slide, index) => (
-              <div key={index} className="md:w-1/3">
-                <div className="bg-[#CCCBCB] p-7 shadow-lg h-full flex flex-col justify-between"> 
+              <div key={index} className="md:w-1/3 px-1">
+                <div className="bg-[#CCCBCB] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between">
                   {slide.images ? (
                     <div className="flex space-x-2 mt-4">
                       {slide.images.map((src, idx) => (
@@ -235,12 +253,15 @@ export default function Home() {
                       ))}
                     </div>
                   ) : (
-                    <img src={slide.image} alt={`Slide ${index} Image`} className="w-full h-48 object-cover mt-4" />
+                      <img src={slide.image} alt={`Slide ${index} Image`} className="w-[350px] h-48 object-contain mt-4" />
                   )}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Raleway', fontWeight: 'lighter' }}>
+                  <h3 className="text-base text-gray-900 mb-4" style={{fontFamily: 'Raleway', letterSpacing:'2px', fontSize: '20px', lineHeight: '40px',fontWeight: 'bold'}}>
                     {slide.title}
                   </h3>
-                  <p className="text-gray-700 mb-4"> - {slide.date}</p>
+                  <p className="text-gray-700 mb-4 flex items-center" style={{ fontFamily: 'Raleway', letterSpacing: '2px', fontSize: '20px', lineHeight: '40px', fontWeight: '400' }}>
+                    <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
+                      {slide.date}
+                  </p>
                 </div>
               </div>
             ))}

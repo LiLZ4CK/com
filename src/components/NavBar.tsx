@@ -10,14 +10,14 @@ export default function Navbar() {
           
           {/* Navigation Links (Left) */}
           <div className="flex space-x-12">
-            <Link href="#notre-groupe" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
+            <Link href="#notre-groupe" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               NOTRE GROUPE
             </Link>
-            <Link href="#vision-valeurs" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
+            <Link href="#vision-valeurs" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               VISION&VALEURS
             </Link>
-            <Link href="#nos-metiers" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
-              NOS MÉTIERS
+            <Link href="#nos-metiers" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
+              NOS METIERS
             </Link>
           </div>
 
@@ -37,16 +37,16 @@ export default function Navbar() {
 
           {/* Navigation Links (Right) */}
           <div className="flex space-x-12">
-            <Link href="#nos-marques" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
+            <Link href="#nos-marques" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               NOS MARQUES
             </Link>
-            <Link href="#actualites" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
-              ACTUALITÉS
+            <Link href="#actualites" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
+              ACTUALITES
             </Link>
-            <Link href="#carriere" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
-              CARRIÈRE
+            <Link href="#carriere" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
+              CARRIERE
             </Link>
-            <Link href="#contact" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Poppins-Light', letterSpacing: '4px', fontWeight: 'lighter' }}>
+            <Link href="#contact" className="text-white hover:text-gray-200 text-lg" style={{ fontFamily: 'Romelio', fontSize: '14px', letterSpacing: '4px', fontWeight: 'lighter' }}>
               CONTACT
             </Link>
           </div>
