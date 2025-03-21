@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Navbar from "@/components/NavBar";
+import MobileSidebar from "@/components/MobileNavBar";
+import Footer from "@/components/Footer";
 
 
 
@@ -17,7 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        <div className="hidden lg:block">
+          <Navbar />
+        </div>
+        <MobileSidebar/>
         {children}
+        <Footer />
       </body>
     </html>
   );

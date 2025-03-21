@@ -26,6 +26,43 @@
   src: url("/fonts/Raleway.ttf") format("truetype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Raleway-Thin";
+  src: url("/fonts/Raleway-Thin.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url("/fonts/Raleway-SemiBold.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("/fonts/Raleway-Medium.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway-Light";
+  src: url("/fonts/Raleway-Light.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gramers Medium";
+  src: url("/fonts/Gramers Medium.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DiamondSignature-Regular";
+  src: url("/fonts/DiamondSignature-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Romelio";
   src: url("/fonts/Romelio.otf") format("opentype");
@@ -112,3 +149,7 @@ h1, h2, h3, h4, h5, h6 , p {
   background-image: var(--bg-image-url);
   /* other properties remain the same */
 }
+
+
+
+
