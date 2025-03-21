@@ -65,6 +65,17 @@ export default function Home() {
       link: "https://medias24.com/2020/04/13/al-alia-immobilier-15-mdh-pour-soutenir-les-residents-les-plus-fragilises/",
     },
   ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+    
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [slides.length]);
+
 
   const handlePrevClick = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -123,13 +134,15 @@ export default function Home() {
       <section
         id="notre-groupe"
         className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: "#fafafa", backgroundSize: "140%" }}
+        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: "#fafafa", backgroundSize: typeof window !== "undefined" && window.innerWidth >= 1024 ? "160%" : "cover", backgroundRepeat: "no-repeat" }}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#141C48] mb-4">
           QUI SOMMES NOUS?
         </h2>
 
-        <p className="text-base md:text-lg lg:text-xl text-[#141C48] max-w-4xl leading-relaxed" style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px', lineHeight: '46px'}} > 
+        <p className="text-base md:text-lg lg:text-[24px] text-[#141C48] max-w-7xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px] mt-6"
+          style={{ fontFamily: "Raleway" }}
+        >
           Arena Property Development est une société marocaine de promotion immobilière qui s’impose
           comme un acteur clé du secteur. Née avec une ambition claire de redéﬁnir les standards de
           l’immobilier, Arena combine innovation, qualité et engagement envers la durabilité pour
@@ -137,13 +150,22 @@ export default function Home() {
         </p>
         <br />
         <br />
-        <p className="text-base md:text-lg lg:text-xl text-[#141C48] max-w-4xl leading-relaxed" style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px', lineHeight: '46px'}} > 
+        <p className="text-base md:text-lg lg:text-[24px] text-[#141C48] max-w-7xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px]"
+          style={{ fontFamily: "Raleway" }}
+        >
           Le groupe se distingue par sa capacité à conjuguer des visions locales et internationales
           grâce à des partenariats stratégiques solides.
         </p>
 
-        <button className="mt-6 px-6 py-2 text-lg border border-[#141C48] text-[#141C48] hover:text-white hover:bg-[#141C48] transition" style={{fontFamily: 'Raleway', fontSize: '24px', fontWeight: '350', letterSpacing: '1.5px'}} >
-          En savoir plus
+        <button
+              className="mt-6 px-6 py-2 text-lg border border-[#141C48] text-[#141C48] hover:text-white hover:bg-[#141C48] transition"
+              style={{
+                fontFamily: "Raleway",
+                fontSize: typeof window !== "undefined" && window.innerWidth >= 1024 ? "24px" : "", // Large screen: 24px
+                fontWeight: typeof window !== "undefined" && window.innerWidth >= 1024 ? "350" : "", // Large screen: 350
+                letterSpacing: typeof window !== "undefined" && window.innerWidth >= 1024 ? "1.5px" : "", // Large screen: 1.5px
+              }}
+            > En savoir plus
         </button>
       </section>
 
@@ -157,28 +179,28 @@ export default function Home() {
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl mt-2 lg:mt-0 font-medium mb-10 lg:mb-6">CHIFFRES CLES</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-[10%] gap-8 w-full max-w-6xl">
           {/* Stat 1 */}
-          <div className="flex flex-col items-center mt-[20%]">
+          <div className="flex flex-col items-center mt-[10%]">
             <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
-            <p className="text-base md:text-lg mt-4 max-w-[240px]"style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
+            <p className="text-base md:text-lg mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans
               le secteur de l’immobilier.
             </p>
           </div>
 
           {/* Stat 2 */}
-          <div className="flex flex-col items-center mt-[20%]">
+          <div className="flex flex-col items-center mt-[10%]">
             <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>80</span>
-            <p className="text-base md:text-lg mt-4 max-w-[240px]"style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
+            <p className="text-base md:text-lg mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Une équipe de 80 professionnels hautement qualifiés et dédiés à l’excellence.
             </p>
           </div>
 
           {/* Stat 3 */}
-          <div className="flex flex-col items-center mt-[20%]">
+          <div className="flex flex-col items-center mt-[10%]">
             <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>20K</span>
-            <p className="text-base md:text-lg mt-4 mb-10 max-w-[280px]"style={{fontFamily: 'Raleway', fontSize:'16px', fontWeight: '400'}}>
+            <p className="text-base md:text-lg mt-0 mb-10 max-w-[280px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Construction de plus de 20 000 unités résidentielles, contribuant à façonner des
               communautés dynamiques.
             </p>
@@ -254,10 +276,10 @@ export default function Home() {
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-12">NOS MARQUES</h2>
         <div className="flex flex-col lg:flex-row justify-center gap-6">
-          <img src={oartf.src} alt="im1" className="w-full lg:w-1/5 h-[120px] mt-[10%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300"/>
-          <img src={oalia.src} alt="im2" className="w-full lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={opalm.src} alt="im3" className="w-full lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={owork.src} alt="im4" className="w-full lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={oartf.src} alt="im1" className="w-full xs:h-[300px] lg:w-1/5 h-[120px] mt-[10%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300"/>
+          <img src={oalia.src} alt="im2" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={opalm.src} alt="im3" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={owork.src} alt="im4" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
         </div>
       </section>
 
@@ -271,16 +293,6 @@ export default function Home() {
   <button onClick={handleNextClick} className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 p-4">
     <IoIosArrowDropright className="w-16 h-24 text-white" />
   </button>
-
-  {/* Mobile Navigation Buttons */}
-  <div className="flex justify-between md:hidden px-4 py-2 absolute top-4 left-0 right-0 z-10">
-    <button onClick={handlePrevClick} className="bg-[#02323843] rounded-full p-2">
-      <IoIosArrowDropleft className="w-8 h-8 text-white" />
-    </button>
-    <button onClick={handleNextClick} className="bg-[#02323843] rounded-full p-2">
-      <IoIosArrowDropright className="w-8 h-8 text-white" />
-    </button>
-  </div>
 
   <div className="w-full max-w-8xl mx-auto px-4">
     {/* Use different container classes based on screen size */}
@@ -341,64 +353,79 @@ export default function Home() {
       ))}
     </div>
 
-    {/* Mobile view - show only one slide at a time */}
-    <div className="md:hidden flex justify-center transition-transform duration-500">
-      {/* Get the current mobile slide */}
-      {getMobileCurrentSlide().map((slide, index) => (
-        <div key={index} className="w-full px-2">
-          <div className="bg-[#cccbcb] p-5 shadow-lg flex flex-col justify-between cursor-pointer">
-            <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
-              {slide.images ? (
-                <div className="grid grid-cols-2 gap-2 mt-2">
-                  {slide.images.map((src, idx) => (
-                    <img 
-                      key={idx} 
-                      src={src} 
-                      alt={`Slide ${index} Image ${idx}`} 
-                      className="w-full h-32 object-cover mb-2" 
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div className="flex justify-center">
+    {/* Mobile view - auto-swiping carousel without buttons */}
+<div className="md:hidden transition-transform duration-500 overflow-hidden">
+  {/* Get the current mobile slide */}
+  <div 
+    className="w-full flex transition-transform duration-500 ease-in-out" 
+    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+  >
+    {slides.map((slide, index) => (
+      <div key={index} className="w-full flex-shrink-0 px-2">
+        <div className="bg-[#cccbcb] p-5 shadow-lg flex flex-col justify-between cursor-pointer">
+          <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
+            {slide.images ? (
+              <div className="grid grid-cols-2 gap-2 mt-2">
+                {slide.images.map((src, idx) => (
                   <img 
-                    src={slide.image} 
-                    alt={`Slide ${index} Image`} 
-                    className="h-auto max-h-[180px] object-contain mb-3" 
+                    key={idx} 
+                    src={src} 
+                    alt={`Slide ${index} Image ${idx}`} 
+                    className="w-full h-32 object-cover mb-2" 
                   />
-                </div>
-              )}
-              <h3 
-                className="text-base text-gray-900 mt-2" 
-                style={{
-                  fontFamily: 'Raleway', 
-                  letterSpacing: '1px', 
-                  fontSize: '18px', 
-                  lineHeight: '1.4', 
-                  fontWeight: 'bold'
-                }}
-              >
-                {slide.title}
-              </h3>
-              <div 
-                className="text-gray-700 mt-4 flex items-center flex-wrap" 
-                style={{ 
-                  fontFamily: 'Raleway', 
-                  letterSpacing: '1px', 
-                  fontSize: '16px', 
-                  lineHeight: '1.4', 
-                  fontWeight: '400' 
-                }}
-              >
-                <img className="w-[100px] mr-2" src={slide.press} alt="Slide Press" />
-                <span>- {slide.date}</span>
+                ))}
               </div>
-            </a>
-          </div>
+            ) : (
+              <div className="flex justify-center">
+                <img 
+                  src={slide.image} 
+                  alt={`Slide ${index} Image`} 
+                  className="h-auto max-h-[180px] object-contain mb-3" 
+                />
+              </div>
+            )}
+            <h3 
+              className="text-base text-gray-900 mt-2" 
+              style={{
+                fontFamily: 'Raleway', 
+                letterSpacing: '1px', 
+                fontSize: '18px', 
+                lineHeight: '1.4', 
+                fontWeight: 'bold'
+              }}
+            >
+              {slide.title}
+            </h3>
+            <div 
+              className="text-gray-700 mt-4 flex items-center flex-wrap" 
+              style={{ 
+                fontFamily: 'Raleway', 
+                letterSpacing: '1px', 
+                fontSize: '16px', 
+                lineHeight: '1.4', 
+                fontWeight: '400' 
+              }}
+            >
+              <img className="w-[100px] mr-2" src={slide.press} alt="Slide Press" />
+              <span>- {slide.date}</span>
+            </div>
+          </a>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
+
+  {/* Optional: Slide indicators */}
+  <div className="flex justify-center mt-4">
+    {slides.map((_, index) => (
+      <div 
+        key={index} 
+        className={`w-2 h-2 mx-1 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
+      ></div>
+    ))}
+  </div>
+</div>
+</div>
 </section>
 
       {/* Section : Contact */}
