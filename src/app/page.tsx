@@ -132,10 +132,16 @@ export default function Home() {
       {/* Section : Notre Groupe */}
       <section
         id="notre-groupe"
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: "#fafafa", backgroundSize: typeof window !== "undefined" && window.innerWidth >= 1024 ? "180%" : "cover", backgroundRepeat: "no-repeat" }}
+        className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-[#edede5]"
+        style={{
+          backgroundImage: `url(${Alogo.src})`,
+          backgroundColor: "#fafafa",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "200%",
+          backgroundPosition: "center", // keeps the image centered
+        }}
       >
-        <h2 className="text-xl  xl:text-2xl 2xl:text-4xl font-medium text-[#141C48] mb-4">
+        <h2 className="text-xl  xl:text-2xl 2xl:text-4xl font-medium text-[#212046] mb-4">
           QUI SOMMES NOUS?
         </h2>
 
