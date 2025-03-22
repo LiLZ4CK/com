@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/Arena-logo.png";
 
 export function Footer() {
   return (
@@ -13,22 +13,22 @@ export function Footer() {
         {/* Logo & Socials */}
         <div className="text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center md:items-start">
-            <Image src={logo} alt="Logo" width={200} height={80} className="w-64 mb-4 md:mb-2 md:ml-24" />
+            <Image src={logo} alt="Logo" width={200} height={80} className="w-45 xl:w-56 2xl:w-62 mt-[-8%]   md:mb-2 md:ml-24" />
             
-            <div className="flex space-x-6 mt-4 md:mt-12">
+            <div className="flex space-x-6  xl:ml-56">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF size={28} className="text-white hover:text-blue-600" />
+                <FaFacebookF  className="text-white hover:text-blue-600 h-6" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={28} className="text-white hover:text-pink-500" />
+                <FaInstagram  className="text-white hover:text-pink-500 h-6" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={28} className="text-white hover:text-blue-700" />
+                <FaLinkedin  className="text-white  hover:text-blue-700 h-6" />
               </a>
             </div>
           </div>
 
-          <p className="text-base mt-6 md:mt-10 md:ml-28 text-center md:text-left">
+          <p className="text-base mt-6 md:mt-10 md:ml-28 text-center md:text-left" style={{ fontFamily: "Raleway", fontSize: "14px", letterSpacing: "3px" }}>
             © 2025 ARENA PROPERTY DEVELOPMENT. All rights reserved.
           </p>
         </div>

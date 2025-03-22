@@ -18,7 +18,8 @@ const MobileSidebar = () => {
         {/* Menu Button on the Right */}
         <button
           onClick={() => setIsOpen(true)}
-          className="lg:hidden bg-gray-800 text-white p-2 rounded-md"
+          className="lg:hidden text-white p-0 m-0 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent"
+          style={{ background: 'transparent', boxShadow: 'none' }}
         >
           <Menu size={24} />
         </button>

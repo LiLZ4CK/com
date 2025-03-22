@@ -74,9 +74,7 @@
   align-items: center;
   color: #ffffff; /* Ensure text color is white */
   font-family: 'Romelio', sans-serif;
-  letter-spacing: 8px;
   margin-top: 8%;
-  font-size: 31px;
   font-weight: lighter;
   transform: scaleY(1.4);
   text-align: center;
@@ -121,7 +119,6 @@ h1, h2, h3, h4, h5, h6 , p {
 
 .marque {
   position: relative;
-  height: 100vh;
   background-color: #003851;
 }
 

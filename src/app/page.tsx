@@ -4,7 +4,6 @@ import backgroundImage from "@/assets/background.jpg";
 import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
 import React from "react";
-import Navbar from "@/components/NavBar";
 import logo from "@/assets/Arena-logo.png";
 import Alogo from "@/assets/A-logo.png";
 import bg from "@/assets/bg.jpg";
@@ -119,14 +118,14 @@ export default function Home() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage.src})`,
         }}
       >
-        <p className="hero-content">
+        <p className="hero-content text-[16-px] xl:text-[24px] 2xl:text-[31px] tracking-[4px] xl:tracking-[3px] 2xl:tracking-[4px]">
           ARENA, CATALYSEUR DE CROISSANCE
           <br />
           URBAINE ET ECONOMIQUE AU MAROC.
         </p>
 
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-6">
-          <img src={logo.src} alt="Logo" className="w-48 md:w-64 lg:w-80 opacity-70" />
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+          <img src={logo.src} alt="Logo" className="w-36 xl:w-48 2xl:w-60 items-center opacity-70" />
         </div>
       </section>
 
@@ -134,13 +133,13 @@ export default function Home() {
       <section
         id="notre-groupe"
         className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: "#fafafa", backgroundSize: typeof window !== "undefined" && window.innerWidth >= 1024 ? "160%" : "cover", backgroundRepeat: "no-repeat" }}
+        style={{ backgroundImage: `url(${Alogo.src})`, backgroundColor: "#fafafa", backgroundSize: typeof window !== "undefined" && window.innerWidth >= 1024 ? "180%" : "cover", backgroundRepeat: "no-repeat" }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#141C48] mb-4">
+        <h2 className="text-xl  xl:text-2xl 2xl:text-4xl font-medium text-[#141C48] mb-4">
           QUI SOMMES NOUS?
         </h2>
 
-        <p className="text-base md:text-lg lg:text-[24px] text-[#141C48] max-w-7xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px] mt-6"
+        <p className="text-base md:text-lg  xl:text-[18px] 2xl:text-[22px] text-[#141C48] xl:max-w-4xl 2xl:max-w-6xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px] mt-6"
           style={{ fontFamily: "Raleway" }}
         >
           Arena Property Development est une société marocaine de promotion immobilière qui s’impose
@@ -149,8 +148,7 @@ export default function Home() {
           transformer les espaces de vie au Maroc.
         </p>
         <br />
-        <br />
-        <p className="text-base md:text-lg lg:text-[24px] text-[#141C48] max-w-7xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px]"
+        <p className="text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-[#141C48] xl:max-w-4xl 2xl:max-w-6xl leading-relaxed lg:font-[350] lg:tracking-[1.5px] lg:leading-[46px] 2xl:mt-6"
           style={{ fontFamily: "Raleway" }}
         >
           Le groupe se distingue par sa capacité à conjuguer des visions locales et internationales
@@ -175,15 +173,16 @@ export default function Home() {
         className="relative min-h-screen flex flex-col justify-center items-center text-center text-white px-6 bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
+          backgroundAttachment: 'fixed', // Add the parallax effect here
         }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl mt-2 lg:mt-0 font-medium mb-10 lg:mb-6">CHIFFRES CLES</h2>
+        <h2 className="text-2xl xl:text-3xl 2xl:text-4xl mt-2 lg:mt-0 font-medium mb-10 lg:mb-6">CHIFFRES CLES</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 mt-[10%] gap-8 w-full max-w-6xl">
           {/* Stat 1 */}
           <div className="flex flex-col items-center mt-[10%]">
-            <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
-            <p className="text-base md:text-lg mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
+            <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
+            <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans
               le secteur de l’immobilier.
             </p>
@@ -191,17 +190,17 @@ export default function Home() {
 
           {/* Stat 2 */}
           <div className="flex flex-col items-center mt-[10%]">
-            <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>80</span>
-            <p className="text-base md:text-lg mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
+          <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>80</span>
+          <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Une équipe de 80 professionnels hautement qualifiés et dédiés à l’excellence.
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="flex flex-col items-center mt-[10%]">
-            <span className="text-6xl md:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>20K</span>
-            <p className="text-base md:text-lg mt-0 mb-10 max-w-[280px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
-              Construction de plus de 20 000 unités résidentielles, contribuant à façonner des
+          <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>20K</span>
+          <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
+              Construction de plus de 20&nbsp;000 unités résidentielles, contribuant à façonner des
               communautés dynamiques.
             </p>
           </div>
@@ -210,19 +209,19 @@ export default function Home() {
 
 {/* Section : Nos Métiers */}
 <section id="nos-metiers" className="py-16 text-center px-4">
-  <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 mb-12" style={{ fontFamily: 'Romelio' }}>NOS METIERS</h2>
+  <h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-gray-900 mb-12" style={{ fontFamily: 'Romelio' }}>NOS METIERS</h2>
   <div className="flex flex-col lg:flex-row gap-4 ">
     {/* Card 1 */}
     <div
       className="relative bg-cover flex-grow h-[400px] md:h-[600px] bg-no-repeat overflow-hidden lg:w-1/3"
       style={{ backgroundImage: `url(${card.src})`, backgroundSize: "cover" }}
     >
-      <div className="absolute inset-0 bg-white flex w-full md:w-[400px] top-[60%] h-[200px] shadow-lg flex-col items-start justify-center p-6 text-left">
-        <h3 className="text-xl md:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
+      <div className="absolute inset-0 bg-white flex w-[270px] h-[130px] xl:h-[170px] xl:w-[350px] 2xl:w-[400px] top-[60%]  shadow-lg flex-col items-start justify-center p-6 text-left">
+        <h3 className="text-l xl:text-xl 2xl:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
           PROMOTION IMMOBILIERE
         </h3>
         <button
-          className="mt-2 text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
+          className="mt-2 text-[12px] xl:text-[15px] 2xl:text-[17px] text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
           onClick={() => (window.location.href = "#details1")}
         >
           Voir détails
@@ -235,12 +234,12 @@ export default function Home() {
       className="relative bg-cover flex-grow h-[400px] md:h-[600px] bg-no-repeat overflow-hidden lg:w-1/3"
       style={{ backgroundImage: `url(${card2.src})`, backgroundSize: "cover" }}
     >
-      <div className="absolute inset-0 bg-white flex w-full md:w-[400px] top-[60%] h-[200px] shadow-lg flex-col items-start justify-center p-6 text-left">
-        <h3 className="text-xl md:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
-          MAITRISE D’OUVRAGE DELEGUEE
+      <div className="absolute inset-0 bg-white flex w-[270px] h-[130px] xl:h-[170px] xl:w-[350px] 2xl:w-[400px] top-[60%]  shadow-lg flex-col items-start justify-center p-6 text-left">
+      <h3 className="text-l xl:text-xl 2xl:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
+      MAITRISE D’OUVRAGE DELEGUEE
         </h3>
         <button
-          className="mt-2 text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
+          className="mt-2 text-[12px] xl:text-[15px] 2xl:text-[17px] text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
           onClick={() => (window.location.href = "#details2")}
         >
           Voir détails
@@ -253,12 +252,12 @@ export default function Home() {
       className="relative bg-cover flex-grow h-[400px] md:h-[600px] bg-no-repeat overflow-hidden lg:w-1/3"
       style={{ backgroundImage: `url(${card3.src})`, backgroundSize: "cover" }}
     >
-      <div className="absolute inset-0 bg-white flex w-full md:w-[400px] top-[60%] h-[200px] shadow-lg flex-col items-start justify-center p-6 text-left">
-        <h3 className="text-xl md:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
-          CONSEIL EN INVESTISSEMENT
+      <div className="absolute inset-0 bg-white flex w-[270px] h-[130px] xl:h-[170px] xl:w-[350px] 2xl:w-[400px] top-[60%]  shadow-lg flex-col items-start justify-center p-6 text-left">
+      <h3 className="text-l xl:text-xl 2xl:text-2xl font-bold text-purple-950"style={{letterSpacing: '2px', fontWeight: 'lighter'}}>
+      CONSEIL EN INVESTISSEMENT
         </h3>
         <button
-          className="mt-2 text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
+          className="mt-2 text-[12px] xl:text-[15px] 2xl:text-[17px] text-left text-black hover:text-blue-600 transition duration-300" style={{fontFamily: 'Raleway', fontWeight: '500'}}
           onClick={() => (window.location.href = "#details3")}
         >
           Voir détails
@@ -270,16 +269,18 @@ export default function Home() {
 
       {/* Section : Nos Marques */}
       <section
-        id="nos-marques"
-        className="py-16 text-center flex flex-col justify-center items-center bg-slate-900"
-        // style={{ backgroundImage: `url(${Alogo.src})`, backgroundSize: "cover",zIndex:0 }}
+        id="nos-marques" 
+        className="marque py-16 text-center flex flex-col min-h-screen justify-center items-center"
+        style={{ 
+          "--bg-image-url": `url(${Alogo.src})`
+        } as React.CSSProperties}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-12">NOS MARQUES</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-44 xl:mt-[-8%]">NOS MARQUES</h2>
         <div className="flex flex-col lg:flex-row justify-center gap-6">
-          <img src={oartf.src} alt="im1" className="w-full xs:h-[300px] lg:w-1/5 h-[120px] mt-[10%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300"/>
-          <img src={oalia.src} alt="im2" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={opalm.src} alt="im3" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={owork.src} alt="im4" className="w-full xs:h-[300px] lg:w-1/5  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={oartf.src} alt="im1" className="h-[100px] w-full xl:w-1/2 h-[60px]  mt-[10%] xl:mt-[12.5%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300"/>
+          <img src={oalia.src} alt="im2" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={opalm.src} alt="im3" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={owork.src} alt="im4" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
         </div>
       </section>
 
@@ -294,14 +295,14 @@ export default function Home() {
     <IoIosArrowDropright className="w-16 h-24 text-white" />
   </button>
 
-  <div className="w-full max-w-8xl mx-auto px-4">
+  <div className="w-full max-w-8xl mx-auto px-6 ml-2">
     {/* Use different container classes based on screen size */}
     <div className="hidden md:flex md:flex-row transition-transform duration-500 gap-0 ml-[5%]">
       {/* Desktop view - show all visible slides */}
       {getDesktopVisibleSlides().map((slide, index) => (
-        <div key={index} className="md:w-1/3 px-1">
-          <div className="bg-[#cccbcb] p-7 shadow-lg h-[500px] w-[470px] flex flex-col justify-between cursor-pointer">
-            <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
+        <div key={index} className="md:w-1/3 px-1 ">
+          <div className="bg-[#cccbcb] p-7 shadow-lg xl:h-[400px] xl:w-[350px] 2xl:h-[500px] 2xl:w-[470px] flex flex-col h-full justify-between cursor-pointer">
+            <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
               {slide.images ? (
                 <div className="flex space-x-2 mt-2">
                   {slide.images.map((src, idx) => (
@@ -309,7 +310,7 @@ export default function Home() {
                       key={idx} 
                       src={src} 
                       alt={`Slide ${index} Image ${idx}`} 
-                      className="w-[133px] h-48 object-cover mb-2 mt-2" 
+                      className="xl:w-[92px] xl:h-36 2xl:w-[133px] 2xl:h-48 object-cover mb-2 mt-2" 
                     />
                   ))}
                 </div>
@@ -318,35 +319,35 @@ export default function Home() {
                   <img 
                     src={slide.image} 
                     alt={`Slide ${index} Image`} 
-                    className="h-[210px] object-contain mb-3 mt-0" 
+                    className="xl:h-[180px] 2xl:h-[210px] object-contain mb-3 mt-0" 
                   />
                 </div>
               )}
+
               <h3 
-                className="text-base text-gray-900 mt-0" 
+                className="xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] text-gray-900 mt-0" 
                 style={{
                   fontFamily: 'Raleway', 
                   letterSpacing: '2px', 
-                  fontSize: '20px', 
-                  lineHeight: '40px', 
                   fontWeight: 'bold'
                 }}
               >
                 {slide.title}
               </h3>
-              <p 
-                className="text-gray-700 mt-6 mb-2 flex items-center" 
-                style={{ 
-                  fontFamily: 'Raleway', 
-                  letterSpacing: '2px', 
-                  fontSize: '20px', 
-                  lineHeight: '40px', 
-                  fontWeight: '400' 
-                }}
-              >
-                <img className="w-[130px] mr-2" src={slide.press} alt="Slide Press" /> - 
-                {slide.date}
-              </p>
+
+              {/* Wrap p inside a flex-col container to push it down */}
+              <div className="flex flex-col h-full">
+                <p 
+                  className="text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto mt-6 mb-2 flex items-center" 
+                  style={{ 
+                    fontFamily: 'Raleway', 
+                    letterSpacing: '2px', 
+                    fontWeight: '400' 
+                  }}
+                >
+                  <img className="xl:w-[80px] 2xl:w-[100px] mr-2" src={slide.press} alt="Slide Press" /> - {slide.date}
+                </p>
+              </div>
             </a>
           </div>
         </div>
@@ -354,79 +355,80 @@ export default function Home() {
     </div>
 
     {/* Mobile view - auto-swiping carousel without buttons */}
-<div className="md:hidden transition-transform duration-500 overflow-hidden">
-  {/* Get the current mobile slide */}
-  <div 
-    className="w-full flex transition-transform duration-500 ease-in-out" 
-    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-  >
-    {slides.map((slide, index) => (
-      <div key={index} className="w-full flex-shrink-0 px-2">
-        <div className="bg-[#cccbcb] p-5 shadow-lg flex flex-col justify-between cursor-pointer">
-          <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block">
-            {slide.images ? (
-              <div className="grid grid-cols-2 gap-2 mt-2">
-                {slide.images.map((src, idx) => (
-                  <img 
-                    key={idx} 
-                    src={src} 
-                    alt={`Slide ${index} Image ${idx}`} 
-                    className="w-full h-32 object-cover mb-2" 
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="flex justify-center">
-                <img 
-                  src={slide.image} 
-                  alt={`Slide ${index} Image`} 
-                  className="h-auto max-h-[180px] object-contain mb-3" 
-                />
-              </div>
-            )}
-            <h3 
-              className="text-base text-gray-900 mt-2" 
-              style={{
-                fontFamily: 'Raleway', 
-                letterSpacing: '1px', 
-                fontSize: '18px', 
-                lineHeight: '1.4', 
-                fontWeight: 'bold'
-              }}
-            >
-              {slide.title}
-            </h3>
-            <div 
-              className="text-gray-700 mt-4 flex items-center flex-wrap" 
-              style={{ 
-                fontFamily: 'Raleway', 
-                letterSpacing: '1px', 
-                fontSize: '16px', 
-                lineHeight: '1.4', 
-                fontWeight: '400' 
-              }}
-            >
-              <img className="w-[100px] mr-2" src={slide.press} alt="Slide Press" />
-              <span>- {slide.date}</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Optional: Slide indicators */}
-  <div className="flex justify-center mt-4">
-    {slides.map((_, index) => (
+    <div className="md:hidden transition-transform duration-500 overflow-hidden">
+      {/* Get the current mobile slide */}
       <div 
-        key={index} 
-        className={`w-2 h-2 mx-1 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
-      ></div>
-    ))}
-  </div>
-</div>
-</div>
-</section>
+        className="w-full flex transition-transform duration-500 ease-in-out" 
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div key={index} className="w-full flex-shrink-0 px-2">
+            <div className="bg-[#cccbcb] p-5 shadow-lg h-full flex flex-col justify-between cursor-pointer">
+              <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
+                {slide.images ? (
+                  <div className="grid grid-cols-2 gap-2 ">
+                    {slide.images.map((src, idx) => (
+                      <img
+                        key={idx} 
+                        src={src} 
+                        alt={`Slide ${index} Image ${idx}`} 
+                        className="w-full h-32 object-cover " 
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex justify-start">
+                    <img 
+                      src={slide.image} 
+                      alt={`Slide ${index} Image`} 
+                      className="h-[200px] object-contain mt-4 mb-4" 
+                    />
+                  </div>
+                )}
+                <h3 
+                  className="text-base text-gray-900 mt-2" 
+                  style={{
+                    fontFamily: 'Raleway', 
+                    letterSpacing: '1px', 
+                    fontSize: '18px', 
+                    lineHeight: '1.8', 
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {slide.title}
+                </h3>
+                <div 
+                  className="text-gray-700 mt-4 flex items-center flex-wrap h-full flex  flex-col items-center" 
+                  style={{ 
+                    fontFamily: 'Raleway', 
+                    letterSpacing: '1px', 
+                    fontSize: '16px', 
+                    lineHeight: '1.3', 
+                    fontWeight: '400' 
+                  }}
+                >
+                  <p className="flex items-center text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto">
+                    <img className="w-[100px] mt-[-8] mr-2" src={slide.press} alt="Slide Press" />-{slide.date}
+                  </p> 
+                </div>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Optional: Slide indicators */}
+      <div className="flex justify-center mt-4">
+        {slides.map((_, index) => (
+          <div 
+            key={index} 
+            className={`w-1 h-1  rounded-full ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
+          ></div>
+        ))}
+      </div>
+    </div>
+    </div>
+    </section>
 
       {/* Section : Contact */}
       <section
@@ -436,7 +438,7 @@ export default function Home() {
       >
         {!showForm ? (
           <button
-            className="px-6 py-2 hover:bg-[#003851] hover:text-white text-2xl md:text-4xl text-custom-blue border-2 border-custom-blue transform mt-64 -translate-y-12"
+            className="px-6 py-2 hover:bg-[#003851] hover:text-white text-xl xl:text-2xl 2xl:text-4xl text-custom-blue border-2 border-custom-blue transform  mt-44 xl:mt-40 2xl:mt-48 -translate-y-12"
             onClick={handleContactClick}
           >
             CONTACTEZ-NOUS
