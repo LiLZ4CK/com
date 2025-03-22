@@ -11,14 +11,14 @@ const MobileSidebar = () => {
   return (
     <div className="relative">
       {/* Top Bar with Logo & Menu Button */}
-      <div className="flex lg:hidden items-center justify-between p-4 bg-[#003851] shadow-md fixed top-0 left-0 w-full z-50">
+      <div className="flex xl:hidden items-center justify-between p-4 bg-[#003851] shadow-md fixed top-0 left-0 w-full z-50">
         {/* Logo on the Left */}
-        <Image src={logo} alt="Logo" width={150} height={50} className="block lg:hidden " priority />
+        <Image src={logo} alt="Logo" width={150} height={50} className="block xl:hidden " priority />
 
         {/* Menu Button on the Right */}
         <button
           onClick={() => setIsOpen(true)}
-          className="lg:hidden text-white p-0 m-0 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent"
+          className="xl:hidden text-white p-0 m-0 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent"
           style={{ background: 'transparent', boxShadow: 'none' }}
         >
           <Menu size={24} />

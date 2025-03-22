@@ -17,7 +17,7 @@ import alalia from "@/assets/Al-Alia.jpg";
 import palms from "@/assets/Palms.jpg";
 import workin from "@/assets/workin.jpg";
 
-import oartf from "@/assets/Artof.png";
+import oartf from "@/assets/Artof2.png";
 import oalia from "@/assets/Nos-marques-logos-al-alia.png";
 import opalm from "@/assets/Nos-marques-logos-Palms.png";
 import owork from "@/assets/Nos-marques-logos-Workin.png";
@@ -93,10 +93,7 @@ export default function Home() {
     return visibleSlides;
   };
   
-  // For mobile - returns only the current slide
-  const getMobileCurrentSlide = () => {
-    return [slides[currentSlide % slides.length]];
-  };
+
 
   const handleContactClick = () => {
     setShowForm(true);
@@ -182,7 +179,7 @@ export default function Home() {
           backgroundAttachment: 'fixed', // Add the parallax effect here
         }}
       >
-        <h2 className="text-2xl xl:text-3xl 2xl:text-4xl mt-2 lg:mt-0 font-medium mb-10 lg:mb-6">CHIFFRES CLES</h2>
+        <h2 className="text-2xl lg:text-3xl 2xl:text-4xl mt-2 lg:mt-[-10%] font-medium mb-16 xl:mb-6">CHIFFRES CLES</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 mt-[10%] gap-8 w-full max-w-6xl">
           {/* Stat 1 */}
@@ -282,31 +279,31 @@ export default function Home() {
         } as React.CSSProperties}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-44 xl:mt-[-8%]">NOS MARQUES</h2>
-        <div className="flex flex-col lg:flex-row justify-center gap-6">
-          <img src={oartf.src} alt="im1" className="h-[100px] w-full xl:w-1/2 h-[60px]  mt-[10%] xl:mt-[12.5%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300"/>
-          <img src={oalia.src} alt="im2" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={opalm.src} alt="im3" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={owork.src} alt="im4" className="h-[350px] w-full xl:w-1/4  opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <div className="flex flex-col lg:flex-row justify-center gap-2 xl:gap-28">
+          <img src={oartf.src} alt="im1" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={oalia.src} alt="im2" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={opalm.src} alt="im3" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={owork.src} alt="im4" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
         </div>
       </section>
 
       {/* Section : Actualites */}
 <h2 className="text-4xl text-center m-6 md:m-12" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
 <section id="actualites" className="py-8 md:py-16 w-full bg-[#034e58] relative min-h-[400px] md:min-h-[600px]">
-  {/* Desktop Arrow Buttons */}
-  <button onClick={handlePrevClick} className="hidden md:block absolute m-5 left-0 top-1/2 transform -translate-y-1/2 p-4">
+  {/* Desktop Arrow Buttons - Only visible on large screens (above 1024px) */}
+  <button onClick={handlePrevClick} className="hidden lg:block absolute m-5 left-0 top-1/2 transform -translate-y-1/2 p-4">
     <IoIosArrowDropleft className="w-16 h-24 text-white" />
   </button>
-  <button onClick={handleNextClick} className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 p-4">
+  <button onClick={handleNextClick} className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 p-4">
     <IoIosArrowDropright className="w-16 h-24 text-white" />
   </button>
 
   <div className="w-full max-w-8xl mx-auto px-6 ml-2">
-    {/* Use different container classes based on screen size */}
-    <div className="hidden md:flex md:flex-row transition-transform duration-500 gap-0 ml-[5%]">
+    {/* Desktop view - only shown on large screens (above 1024px) */}
+    <div className="hidden xl:flex xl:flex-row transition-transform duration-500 gap-0 ml-[5%]">
       {/* Desktop view - show all visible slides */}
       {getDesktopVisibleSlides().map((slide, index) => (
-        <div key={index} className="md:w-1/3 px-1 ">
+        <div key={index} className="lg:w-1/3 px-1 ">
           <div className="bg-[#cccbcb] p-7 shadow-lg xl:h-[400px] xl:w-[350px] 2xl:h-[500px] 2xl:w-[470px] flex flex-col h-full justify-between cursor-pointer">
             <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
               {slide.images ? (
@@ -342,7 +339,7 @@ export default function Home() {
               </h3>
 
               {/* Wrap p inside a flex-col container to push it down */}
-              <div className="flex flex-col h-full">
+              <div className="flex items-start flex-col h-full">
                 <p 
                   className="text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto mt-6 mb-2 flex items-center" 
                   style={{ 
@@ -351,7 +348,7 @@ export default function Home() {
                     fontWeight: '400' 
                   }}
                 >
-                  <img className="xl:w-[80px] 2xl:w-[100px] mr-2" src={slide.press} alt="Slide Press" /> - {slide.date}
+                  <img className="xl:w-[80px] 2xl:w-[100px] mr-4" src={slide.press} alt="Slide Press" /> - {slide.date}
                 </p>
               </div>
             </a>
@@ -360,9 +357,9 @@ export default function Home() {
       ))}
     </div>
 
-    {/* Mobile view - auto-swiping carousel without buttons */}
-    <div className="md:hidden transition-transform duration-500 overflow-hidden">
-      {/* Get the current mobile slide */}
+    {/* Mobile and Tablet view - show on screens up to 1024px */}
+    <div className="xl:hidden transition-transform duration-500 overflow-hidden">
+      {/* Current slide with transition effect */}
       <div 
         className="w-full flex transition-transform duration-500 ease-in-out" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -372,27 +369,27 @@ export default function Home() {
             <div className="bg-[#cccbcb] p-5 shadow-lg h-full flex flex-col justify-between cursor-pointer">
               <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
                 {slide.images ? (
-                  <div className="grid grid-cols-2 gap-2 ">
+                  <div className="grid grid-cols-2 gap-2">
                     {slide.images.map((src, idx) => (
                       <img
                         key={idx} 
                         src={src} 
                         alt={`Slide ${index} Image ${idx}`} 
-                        className="w-full h-32 object-cover " 
+                        className="w-full h-32 md:h-40 object-cover" 
                       />
                     ))}
                   </div>
                 ) : (
-                  <div className="flex justify-start">
+                  <div className="flex justify-center md:justify-start">
                     <img 
                       src={slide.image} 
                       alt={`Slide ${index} Image`} 
-                      className="h-[200px] object-contain mt-4 mb-4" 
+                      className="h-[200px] md:h-[250px] object-contain mt-4 mb-4" 
                     />
                   </div>
                 )}
                 <h3 
-                  className="text-base text-gray-900 mt-2" 
+                  className="text-base text-gray-900 mt-2 md:mt-4" 
                   style={{
                     fontFamily: 'Raleway', 
                     letterSpacing: '1px', 
@@ -404,7 +401,7 @@ export default function Home() {
                   {slide.title}
                 </h3>
                 <div 
-                  className="text-gray-700 mt-4 flex items-center flex-wrap h-full flex  flex-col items-center" 
+                  className="text-gray-700 mt-4 flex items-center flex-wrap h-full flex flex-col items-center md:items-start" 
                   style={{ 
                     fontFamily: 'Raleway', 
                     letterSpacing: '1px', 
@@ -413,28 +410,28 @@ export default function Home() {
                     fontWeight: '400' 
                   }}
                 >
-                  <p className="flex items-center text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto">
-                    <img className="w-[100px] mt-[-8] mr-2" src={slide.press} alt="Slide Press" />-{slide.date}
-                  </p> 
+                  <p className="flex items-end text-gray mt-auto">
+                    <img className="w-[80px] md:w-[120px] mr-2" src={slide.press} alt="Slide Press" />-{slide.date}
+                  </p>
                 </div>
               </a>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Optional: Slide indicators */}
-      <div className="flex justify-center mt-4">
+      {/* Slide indicators */}
+      <div className="flex justify-center mt-4 space-x-2">
         {slides.map((_, index) => (
           <div 
             key={index} 
-            className={`w-1 h-1  rounded-full ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
+            onClick={() => setCurrentIndex(index)}
           ></div>
         ))}
       </div>
     </div>
-    </div>
-    </section>
+  </div>
+</section> 
 
       {/* Section : Contact */}
       <section
