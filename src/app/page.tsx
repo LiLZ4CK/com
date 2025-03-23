@@ -23,7 +23,7 @@ import opalm from "@/assets/Nos-marques-logos-Palms.png";
 import owork from "@/assets/Nos-marques-logos-Workin.png";
 
 import aeco from "@/assets/ÉCO.ma_.png";
-import a360 from "@/assets/le360.svg";
+import a360 from "@/assets/le360.png";
 import am24 from "@/assets/logo.m24.png";
 
 import nosmarques from "@/assets/nosmarques.png";
@@ -411,7 +411,7 @@ export default function Home() {
                   }}
                 >
                   <p className="flex items-end text-gray mt-auto">
-                    <img className="w-[80px] md:w-[120px] mr-2" src={slide.press} alt="Slide Press" />-{slide.date}
+                    <img className="w-[60px] md:w-[120px] mr-2" src={slide.press} alt="Slide Press" />-{slide.date}
                   </p>
                 </div>
               </a>
