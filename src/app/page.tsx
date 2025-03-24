@@ -274,7 +274,7 @@ export default function Home() {
       <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-12 sm:mb-44">NOS MARQUES</h2>
       <div className="flex flex-col lg:flex-row justify-center items-center mt-12 gap-4 xl:gap-28 w-full px-4">
         <div className="w-full lg:w-1/4 max-w-xs">
-          <img src={oartf.src} alt="im1" className="h-auto w-full max-h-[240px] xl:max-h-[350px] mb-[-21%] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+          <img src={oartf.src} alt="im1" className="h-auto w-full max-h-[240px] xl:max-h-[350px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
         </div>
         <div className="w-full lg:w-1/4 max-w-xs">
           <img src={oalia.src} alt="im2" className="h-auto w-full max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
