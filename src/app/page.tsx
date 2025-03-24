@@ -1,13 +1,10 @@
 'use client';
-import Image from "next/image";
 import backgroundImage from "@/assets/background.jpg";
-import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
 import React from "react";
 import logo from "@/assets/Arena-logo.png";
 import Alogo from "@/assets/A-logo.png";
 import bg from "@/assets/bg.jpg";
-import aboutbg from "@/assets/aboutus_bg.png";
 
 import card from "@/assets/analog-landscape-city-with-buildings.jpg";
 import card3 from "@/assets/business-people-working-with-ipad-high-angle.jpg";
@@ -26,16 +23,12 @@ import aeco from "@/assets/ÉCO.ma_.png";
 import a360 from "@/assets/le360.png";
 import am24 from "@/assets/logo.m24.png";
 
-import nosmarques from "@/assets/nosmarques.png";
 import contactus from "@/assets/contactus.png";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
 import Sanam from "@/assets/Sanam holding.png";
 import alaliamaak from "@/assets/Al-Alia-maak.jpg";
 import "@/app/globals.css";
-import { url } from "inspector";
-import MobileSidebar from "@/components/MobileNavBar";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -176,7 +169,7 @@ export default function Home() {
         className="relative min-h-screen flex flex-col justify-center items-center text-center text-white px-6 bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
-          backgroundAttachment: 'fixed', // Add the parallax effect here
+          backgroundAttachment: 'fixed',
         }}
       >
         <h2 className="text-2xl lg:text-3xl 2xl:text-4xl mt-2 lg:mt-[-10%] font-medium mb-16 xl:mb-6">CHIFFRES CLES</h2>
@@ -272,20 +265,28 @@ export default function Home() {
 
       {/* Section : Nos Marques */}
       <section
-        id="nos-marques" 
-        className="marque py-16 text-center flex flex-col min-h-screen justify-center items-center"
-        style={{ 
-          "--bg-image-url": `url(${Alogo.src})`
-        } as React.CSSProperties}
-      >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-44 xl:mt-[-8%]">NOS MARQUES</h2>
-        <div className="flex flex-col lg:flex-row justify-center gap-2 xl:gap-28">
-          <img src={oartf.src} alt="im1" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={oalia.src} alt="im2" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={opalm.src} alt="im3" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-          <img src={owork.src} alt="im4" className="h-[240px] xl:h-[350px] w-full xl:w-1/4   opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+     id="nos-marques" 
+     className="marque py-16 text-center flex flex-col min-h-screen justify-center items-center"
+     style={{ 
+       "--bg-image-url": `url(${Alogo.src})`
+     } as React.CSSProperties}
+   >
+      <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-12 sm:mb-44">NOS MARQUES</h2>
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-12 gap-4 xl:gap-28 w-full px-4">
+        <div className="w-full lg:w-1/4 max-w-xs">
+          <img src={oartf.src} alt="im1" className="h-auto w-full max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
         </div>
-      </section>
+        <div className="w-full lg:w-1/4 max-w-xs">
+          <img src={oalia.src} alt="im2" className="h-auto w-full max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        </div>
+        <div className="w-full lg:w-1/4 max-w-xs">
+          <img src={opalm.src} alt="im3" className="h-auto w-full max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />  
+        </div>
+        <div className="w-full lg:w-1/4 max-w-xs">
+          <img src={owork.src} alt="im4" className="h-auto w-full max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        </div>
+      </div>
+    </section>
 
       {/* Section : Actualites */}
 <h2 className="text-4xl text-center m-6 md:m-12" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
@@ -380,7 +381,7 @@ export default function Home() {
                     ))}
                   </div>
                 ) : (
-                  <div className="flex justify-center md:justify-start">
+                  <div className="flex justify-start md:justify-start">
                     <img 
                       src={slide.image} 
                       alt={`Slide ${index} Image`} 

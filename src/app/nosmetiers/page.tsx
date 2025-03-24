@@ -10,7 +10,7 @@ const NosMetiers = () => {
   return (
     <>
       <Head>
-        <title>Nos Métiers | Your Company Name</title>
+        <title>Nos Métiers | Arena</title>
         <meta name="description" content="Découvrez nos services et expertises" />
       </Head>
       

@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link href="#carriere" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
               CARRIERE
             </Link>
-            <Link href="#contact" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="Contact" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
               CONTACT
             </Link>
           </div>

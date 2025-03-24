@@ -43,9 +43,9 @@ export function Footer() {
             { text: "NOS MARQUES", id: "nos-marques" },
             { text: "ACTUALITÉS", id: "actualites" },
             { text: "CARRIÈRE", id: "carriere" },
-            { text: "CONTACT", id: "contact" },
+            { text: "CONTACT", id: "Contact" },
           ].map((link, index) => (
-            <a key={index} href={`#${link.id}`} className="text-lg hover:underline" style={{ fontFamily: "Raleway", fontSize: "14px", letterSpacing: "5px" }}>
+            <a key={index} href={`${link.id}`} className="text-lg hover:underline" style={{ fontFamily: "Raleway", fontSize: "14px", letterSpacing: "5px" }}>
               {link.text}
             </a>
           ))}
