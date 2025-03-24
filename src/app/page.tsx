@@ -271,19 +271,19 @@ export default function Home() {
        "--bg-image-url": `url(${Alogo.src})`
      } as React.CSSProperties}
    >
-      <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-12 sm:mb-44">NOS MARQUES</h2>
-      <div className="flex flex-col lg:flex-row justify-center items-center mt-12 gap-4 xl:gap-20">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 sm:mb-10">NOS MARQUES</h2>
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-2 gap-4 xl:gap-20">
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[240px] xl:max-h-[350px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[280px] xl:max-h-[550px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
       </div>
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={oalia.src} alt="im2" className="h-auto w-auto max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <img src={oalia.src} alt="im2" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
       </div>
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={opalm.src} alt="im3" className="h-auto w-auto max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />  
+        <img src={opalm.src} alt="im3" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />  
       </div>
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={owork.src} alt="im4" className="h-auto w-auto max-h-[240px] xl:max-h-[350px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <img src={owork.src} alt="im4" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
       </div>
     </div>
     </section>
