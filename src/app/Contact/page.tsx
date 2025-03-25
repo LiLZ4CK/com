@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <div className="relative w-full overflow-hidden">
       <section
-        className="relative min-h-screen w-full h-[190vh] xl:h-[250vh]  flex flex-col items-center bg-cover bg-center px-4"
+        className="relative min-h-screen w-full h-[230vh] xl:h-[250vh]  flex flex-col items-center bg-cover bg-center px-4"
         style={{
           backgroundColor: "rgba(236, 236, 236, 0.5)",
           backgroundImage: `linear-gradient(rgba(187, 187, 187, 0.5), rgba(187, 187, 187, 0.5)), url(${img.src})`,
@@ -30,7 +30,7 @@ const Contact = () => {
         }}
       >
         <h1
-          className="font-light text-start text-black-300 mt-[12%] xl:mt-[2%] text-[90px] xl:text-[120px] 2xl:text-[150px]"
+          className="font-light text-start text-black-300 mt-[17%] xl:mt-[2%] text-[70px] xl:text-[120px] 2xl:text-[150px]"
           style={{
             fontFamily: "Raleway-Thin",
             fontWeight: "100",
