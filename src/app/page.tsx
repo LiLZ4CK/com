@@ -14,7 +14,7 @@ import alalia from "@/assets/Al-Alia.jpg";
 import palms from "@/assets/Palms.jpg";
 import workin from "@/assets/workin.jpg";
 
-import oartf from "@/assets/Artof2.png";
+import oartf from "@/assets/Artof.png";
 import oalia from "@/assets/Nos-marques-logos-al-alia.png";
 import opalm from "@/assets/Nos-marques-logos-Palms.png";
 import owork from "@/assets/Nos-marques-logos-Workin.png";
@@ -165,18 +165,16 @@ export default function Home() {
 
       {/* Section : Vision & Valeurs */}
       <section
-        id="vision-valeurs"
-        className="relative min-h-screen flex flex-col justify-center items-center text-center text-white px-6 bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <h2 className="text-2xl lg:text-3xl 2xl:text-4xl mt-2 lg:mt-[-10%] font-medium mb-16 xl:mb-6">CHIFFRES CLES</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-[10%] gap-8 w-full max-w-6xl">
+          id="vision-valeurs"
+          className="relative min-h-screen flex flex-col items-center text-center text-white px-6 bg-cover bg-center pt-10"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
+          }}
+        >
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white">CHIFFRES CLES</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-8 w-full max-w-6xl">
           {/* Stat 1 */}
-          <div className="flex flex-col items-center mt-[10%]">
+          <div className="flex flex-col items-center mt-[20%]">
             <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
             <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans
@@ -271,10 +269,10 @@ export default function Home() {
        "--bg-image-url": `url(${Alogo.src})`
      } as React.CSSProperties}
    >
-      <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 sm:mb-10">NOS MARQUES</h2>
-      <div className="flex flex-col lg:flex-row justify-center items-center mt-2 gap-4 xl:gap-20">
+      <h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-white mb-8 xl:mb-[10%]">NOS MARQUES</h2>
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-36 xl:mt-2 gap-4 xl:gap-0 2xl:gap-28">
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[280px] xl:max-h-[550px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[440px] xl:h-16 xl:w-[950px]  mb-[12%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
       </div>
       <div className="w-auto max-w-xs flex justify-center">
         <img src={oalia.src} alt="im2" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
@@ -289,7 +287,7 @@ export default function Home() {
     </section>
 
       {/* Section : Actualites */}
-<h2 className="text-4xl text-center m-6 md:m-12" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
+<h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-center m-6 md:m-12" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
 <section id="actualites" className="py-8 md:py-16 w-full bg-[#034e58] relative min-h-[400px] md:min-h-[600px]">
   {/* Desktop Arrow Buttons - Only visible on large screens (above 1024px) */}
   <button onClick={handlePrevClick} className="hidden lg:block absolute m-5 left-0 top-1/2 transform -translate-y-1/2 p-4">
