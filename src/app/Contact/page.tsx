@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row">
           {/* Left column - Text content */}
           <div className="lg:w-1/2 pr-8 mt-4">
-            <p className="2xl:ml-[-35%] text-[36px] xl:text-[52px] tracking-[2px] font-[200] leading-[1.4] 2xl:text-[72px] 2xl:font-[200] xl:tracking-[4px] xl:leading-[1.4] text-[#1a2041]">
+            <p className="2xl:ml-[-35%] text-[30px] xl:text-[52px] tracking-[2px] font-[200] leading-[1.4] 2xl:text-[72px] 2xl:font-[200] xl:tracking-[4px] xl:leading-[1.4] text-[#1a2041]">
               CONTACTEZ <br />
               NOS EXPERTS <br />
               DÈS AUJOURD&apos;HUI
