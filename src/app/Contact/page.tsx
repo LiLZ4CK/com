@@ -54,11 +54,11 @@ const Contact = () => {
               className="2xl:ml-[-35%] mt-4 text-[17px] tracking-[1px] font-[400] leading-[1.2] 2xl:text-[25px] xl:leading-[2.4] text-[#1a2041]"
               style={{ fontFamily: "Raleway" }}
             >
-              N&apos;hésitez pas à nous contacter pour toute demande
+              N&apos;hésitez pas à nous contacter pour toute demande&nbsp; 
               <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
-              ou assistance. Que ce soit pour des questions sur
+              ou assistance. Que ce soit pour des questions sur&nbsp; 
               <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
-              nos services ou un besoin de support, nous
+              nos services ou un besoin de support, nous&nbsp; 
               <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
               sommes là pour vous aider.
             </p>
@@ -67,13 +67,13 @@ const Contact = () => {
                 className="2xl:ml-[-35%] mt-3 tracking-[2px] text-[9px] font-[400] leading-[1.4] 2xl:text-[13px] xl:leading-[2.1] text-[#1a2041]"
                 style={{ fontFamily: "Raleway" }}
               >
-                La Société collecte vos données personnelles pour la gestion des clients. Ce traitement
+                La Société collecte vos données personnelles pour la gestion des clients. Ce traitement&nbsp; 
                <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
-                a fait l'objet d'une déclaration / demande d'autorisation auprès de la CNDP sous le
+                a fait l'objet d'une déclaration / demande d'autorisation auprès de la CNDP sous le&nbsp; 
                <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
                 numéro D-GC-724/2020.
                <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
-                Vous pouvez vous adresser à la Société pour exercer vos droits d&apos;accès, de rectiﬁcation
+                Vous pouvez vous adresser à la Société pour exercer vos droits d&apos;accès, de rectiﬁcation&nbsp; 
                <span className="hidden xl:block" style={{lineHeight: '1px'}}><br/></span>
                 et d&apos;opposition conformément aux dispositions de la loi 09-08
             </p>
@@ -89,14 +89,14 @@ const Contact = () => {
                   placeholder="Nom*"
                   value={formData.nom}
                   onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
-                  className="w-full  2xl:text-[27px] bg-transparent border-b border-black rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway", paddingBottom: "4rem", fontWeight: "250", letterSpacing: "2px" }}
+                  className="w-full  2xl:text-[27px] pt-[1rem] pb-[1rem]  xl:pt-[4rem] xl:pb-[2rem] bg-transparent border-b mb-6 border-black rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway", fontWeight: "250", letterSpacing: "2px" }}
                 />
                 <input
                   type="text"
                   placeholder="Prénom*"
                   value={formData.prenom}
                   onChange={(e) => setFormData({ ...formData, prenom: e.target.value })}
-                  className="w-full 2xl:text-[27px] bg-transparent border-b border-black rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway", paddingBottom: "4rem", fontWeight: "250", letterSpacing: "2px" }}
+                  className="w-full 2xl:text-[27px] pt-[-2rem] pb-[1rem]  xl:pt-[4rem] xl:pb-[2rem] bg-transparent border-b mb-6  border-black  mt-[-8%] xl:mt-0 rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway",  fontWeight: "250", letterSpacing: "2px" }}
                 />
               </div>
 
@@ -105,14 +105,14 @@ const Contact = () => {
                 placeholder="E-mail*"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full 2xl:text-[27px] bg-transparent border-b border-black rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway", paddingBottom: "4rem", paddingTop: "3rem", fontWeight: "250", letterSpacing: "2px"}}
+                className="w-full 2xl:text-[27px] pt-[1rem] pb-[1rem] xl:pt-[2rem] xl:pb-[2rem]  bg-transparent border-b mb-6  border-black rounded-none focus:outline-none focus:border-black transition-colors placeholder:text-black" style={{ fontFamily: "Raleway",  fontWeight: "250", letterSpacing: "2px"}}
               />
 
               <textarea
                 placeholder="Message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full 2xl:text-[27px] bg-transparent border-b border-black rounded-none focus:outline-none focus:border-black transition-colors min-h-[120px] resize-none placeholder:text-black" style={{ fontFamily: "Raleway", paddingBottom: "4rem", paddingTop: "4rem", fontWeight: "250", letterSpacing: "2px"  }}
+                className="w-full 2xl:text-[27px] pt-[2rem]  xl:pt-[3rem] bg-transparent border-b border-black rounded-none focus:outline-none focus:border-black mb-6 transition-colors  resize-none placeholder:text-black" style={{ fontFamily: "Raleway", fontWeight: "250", letterSpacing: "2px"  }}
               />
 
               <div className="flex items-center space-x-2">
@@ -125,11 +125,9 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="newsletter"
-                  className="text-sm 2xl:text-[25px] font-[100] text-black"
+                  className="text-sm pt-[2rem] pb-[2rem] 2xl:text-[25px] font-[100] text-black"
                   style={{
                     fontFamily: "Raleway",
-                    paddingBottom: "3rem",
-                    paddingTop: "3rem",
                     fontWeight: "250",
                     letterSpacing: "2px",
                   }}
