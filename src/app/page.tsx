@@ -1,6 +1,6 @@
 'use client';
 import backgroundImage from "@/assets/background.jpg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import React from "react";
 import logo from "@/assets/Arena-logo.png";
 import Alogo from "@/assets/A-logo.png";
@@ -30,6 +30,10 @@ import Sanam from "@/assets/Sanam holding.png";
 import alaliamaak from "@/assets/Al-Alia-maak.jpg";
 import "@/app/globals.css";
 
+
+import { useInView } from "react-intersection-observer";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showForm, setShowForm] = useState(false);
@@ -58,15 +62,41 @@ export default function Home() {
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [isMobile, setIsMobile] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
-    
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [slides.length]);
+    setIsMobile(window.innerWidth <= 1024);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 } 
+    );
+
+    const section = document.getElementById('actualites');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile && inView) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, inView]); 
 
 
   const handlePrevClick = () => {
@@ -86,6 +116,48 @@ export default function Home() {
     return visibleSlides;
   };
   
+  interface AnimatedNumberProps {
+    target: number; 
+  }
+  
+  const AnimatedNumber: React.FC<AnimatedNumberProps> = ({ target }) => {
+    const count = useMotionValue(0);
+    const animationRef = useRef(false); 
+  
+    const formattedCount = useTransform(count, (latest) =>
+      latest >= 1000 ? (latest / 1000).toFixed(1).replace(".0", "") + "k" : Math.floor(latest).toString()
+    );
+  
+    const { ref, inView } = useInView({
+      threshold: 0.1,
+    });
+  
+    useEffect(() => {
+      if (inView && !animationRef.current) {
+        animationRef.current = true; 
+  
+        const controls = animate(count, target, { 
+          duration: 2, 
+          ease: "easeOut",
+          onComplete: () => {
+            animationRef.current = true;
+          }
+        });
+  
+        return () => controls.stop();
+      }
+    }, [inView, count, target]);
+  
+    return (
+      <motion.span
+        ref={ref}
+        className="text-[62px] xl:text-[90px] 2xl:text-[120px] mt-[20%] xl:mt-[60%] font-medium"
+        style={{ fontFamily: "Romelio" }}
+      >
+        {formattedCount}
+      </motion.span>
+    );
+  };
 
 
   const handleContactClick = () => {
@@ -127,7 +199,7 @@ export default function Home() {
           backgroundImage: `url(${Alogo.src})`,
           backgroundColor: "#fafafa",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "200%",
+          backgroundSize: "90%",
           backgroundPosition: "center", // keeps the image centered
         }}
       >
@@ -166,16 +238,18 @@ export default function Home() {
       {/* Section : Vision & Valeurs */}
       <section
           id="vision-valeurs"
-          className="relative min-h-screen flex flex-col items-center text-center text-white px-6 bg-cover bg-center pt-10"
+          className="marque py-16 text-white text-center flex flex-col min-h-screen justify-start items-center"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
+            backgroundAttachment: 'fixed',
           }}
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-white">CHIFFRES CLES</h2>
         <div className="grid grid-cols-1 md:grid-cols-3  gap-8 w-full max-w-6xl">
           {/* Stat 1 */}
-          <div className="flex flex-col items-center mt-[20%]">
-            <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>100</span>
+          <div className="flex flex-col items-center xl:mt-[20%]">
+          <AnimatedNumber target={100} />
+          
             <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans
               le secteur de l’immobilier.
@@ -183,16 +257,16 @@ export default function Home() {
           </div>
 
           {/* Stat 2 */}
-          <div className="flex flex-col items-center mt-[10%]">
-          <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>80</span>
+          <div className="flex flex-col items-center xl:mt-[20%]">
+          <AnimatedNumber target={80} />
           <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Une équipe de 80 professionnels hautement qualifiés et dédiés à l’excellence.
             </p>
           </div>
 
           {/* Stat 3 */}
-          <div className="flex flex-col items-center mt-[10%]">
-          <span className="text-5xl xl:text-6xl 2xl:text-8xl font-medium"style={{ fontFamily: 'Romelio' }}>20K</span>
+          <div className="flex flex-col items-center xl:mt-[20%]">
+          <AnimatedNumber target={20000} />
           <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
               Construction de plus de 20&nbsp;000 unités résidentielles, contribuant à façonner des
               communautés dynamiques.
@@ -264,15 +338,15 @@ export default function Home() {
       {/* Section : Nos Marques */}
       <section
      id="nos-marques" 
-     className="marque py-16 text-center flex flex-col min-h-screen justify-center items-center"
+     className="marque py-16 text-center flex flex-col min-h-screen justify-start items-center"
      style={{ 
        "--bg-image-url": `url(${Alogo.src})`
      } as React.CSSProperties}
    >
-      <h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-white mb-8 xl:mb-[10%]">NOS MARQUES</h2>
-      <div className="flex flex-col lg:flex-row justify-center items-center mt-36 xl:mt-2 gap-4 xl:gap-0 2xl:gap-28">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl text-white">NOS MARQUES</h2>
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-52 gap-4 xl:gap-20">
       <div className="w-auto max-w-xs flex justify-center">
-        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[440px] xl:h-16 xl:w-[950px]  mb-[12%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[280px] xl:max-h-[550px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
       </div>
       <div className="w-auto max-w-xs flex justify-center">
         <img src={oalia.src} alt="im2" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
@@ -287,7 +361,7 @@ export default function Home() {
     </section>
 
       {/* Section : Actualites */}
-<h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-center m-6 md:m-12" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
+<h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-center m-8 md:mt-[3%]" style={{ color: '#023a41', fontFamily: 'Romelio' }}>ACTUALITES</h2>
 <section id="actualites" className="py-8 md:py-16 w-full bg-[#034e58] relative min-h-[400px] md:min-h-[600px]">
   {/* Desktop Arrow Buttons - Only visible on large screens (above 1024px) */}
   <button onClick={handlePrevClick} className="hidden lg:block absolute m-5 left-0 top-1/2 transform -translate-y-1/2 p-4">

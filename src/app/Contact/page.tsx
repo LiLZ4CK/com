@@ -51,7 +51,7 @@ const Contact = () => {
             </p>
 
             <p
-              className="2xl:ml-[-35%] mt-4 text-[19px] tracking-[1px] font-[400] leading-[1.2] 2xl:text-[25px] xl:leading-[2.4] text-[#1a2041]"
+              className="2xl:ml-[-35%] mt-4 text-[17px] tracking-[1px] font-[400] leading-[1.2] 2xl:text-[25px] xl:leading-[2.4] text-[#1a2041]"
               style={{ fontFamily: "Raleway" }}
             >
               N&apos;hésitez pas à nous contacter pour toute demande

@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-30 bg-[#003851] shadow-sm w-full">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center py-4">
-          <div className="flex items-center space-x-8 md:space-x-12">
+          <div className="flex items-center space-x-8 md:space-x-12" style={{fontFamily: "Romelio"}}>
             {/* Left Links */}
             <Link href="#notre-groupe" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
               NOTRE GROUPE
