@@ -7,15 +7,15 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-30 bg-[#003851] shadow-sm w-full">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center py-4">
-          <div className="flex items-center space-x-8 md:space-x-12" style={{fontFamily: "Romelio"}}>
+          <div className="flex items-center space-x-8 md:space-x-12" style={{fontFamily: "Raleway"}}>
             {/* Left Links */}
-            <Link href="#notre-groupe" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="NotreGroupe" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               NOTRE GROUPE
             </Link>
-            <Link href="#vision-valeurs" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="#vision-valeurs" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               VISION&VALEURS
             </Link>
-            <Link href="#nos-metiers" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="#nos-metiers" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               NOS METIERS
             </Link>
             
@@ -32,16 +32,16 @@ export default function Navbar() {
             </Link>
             
             {/* Right Links */}
-            <Link href="#nos-marques" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="#nos-marques" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               NOS MARQUES
             </Link>
-            <Link href="#actualites" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="#actualites" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               ACTUALITES
             </Link>
-            <Link href="#carriere" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="#carriere" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               CARRIERE
             </Link>
-            <Link href="Contact" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Romelio', fontWeight: 'lighter' }}>
+            <Link href="Contact" className="text-white hover:text-gray-200 xl:text-[12px] 2xl:text-[14px] xl:tracking-[2px] 2xl:tracking-[4px]" style={{ fontFamily: 'Raleway', fontWeight: '400' }}>
               CONTACT
             </Link>
           </div>
