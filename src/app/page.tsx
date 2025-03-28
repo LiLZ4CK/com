@@ -21,6 +21,7 @@ import oalia from "@/assets/Nos-marques-logos-al-alia.png";
 import opalm from "@/assets/Nos-marques-logos-Palms.png";
 import owork from "@/assets/Nos-marques-logos-Workin.png";
 
+import {InfiniteLogoCarousel} from "@/components/carou";
 import aeco from "@/assets/ÉCO.ma_.png";
 import a360 from "@/assets/le360.png";
 import am24 from "@/assets/logo.m24.png";
@@ -110,6 +111,7 @@ const brandImages = [
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log("entry.isIntersecting",entry.isIntersecting)
         setIsInViewm(entry.isIntersecting);
       },
       { 
@@ -390,15 +392,9 @@ const brandImages = [
       
       {/* Desktop View */}
       <div className="hidden lg:flex justify-center items-center mt-52 gap-4 xl:gap-20">
-        {brandImages.map((image, index) => (
-          <div key={index} className="w-auto max-w-xs flex justify-center">
-            <img 
-              src={image.src} 
-              alt={image.alt} 
-              className="h-auto w-full max-h-[280px] xl:max-h-[450px] object-contain opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" 
-            />
-          </div>
-        ))}
+        <div className="w-full overflow-hidden rounded-lg p-4">
+          <InfiniteLogoCarousel logos={brandImages} speed={20} pauseOnHover={true} />
+        </div>
       </div>
       
       {/* Mobile Carousel View */}
@@ -414,10 +410,7 @@ const brandImages = [
               bulletClass: 'swiper-pagination-bullet',
               bulletActiveClass: 'swiper-pagination-bullet-active'
             }}
-            autoplay={isInViewm ? {
-              delay: 3000, // 3 seconds between slides
-              disableOnInteraction: false, // Continue autoplay after user interaction
-            } : false}
+            autoplay={true}
             loop={true}
             className="brands-swiper"
           >
@@ -427,7 +420,8 @@ const brandImages = [
                   <img 
                     src={image.src} 
                     alt={image.alt} 
-                    className="h-auto w-full max-h-[280px] object-contain opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" 
+                    className="h-auto w-full max-h-[280px] object-contain opacity-50 hover:opacity-100 hover:scale-105 transition duration-300" 
+                    style={{width: "343px", height: "280px"}}
                   />
                 </div>
               </SwiperSlide>
@@ -500,7 +494,7 @@ const brandImages = [
                     fontWeight: '400' 
                   }}
                   >
-                  <img className="xl:w-[80px] 2xl:w-[100px] mr-2" src={slide.press} alt="Slide Press" /> - {slide.date}
+                  <img className="xl:w-[80px] 2xl:w-[90px] mr-2" src={slide.press} alt="Slide Press" /> - {slide.date}
                 </p>
                   </div>
               </div>
