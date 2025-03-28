@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image"
 import { useState } from "react"
-import img from "./../../assets/A-logo.png"
-import img2 from "./../../assets/shutterstock_2482950157.png"
+import img from "@/assets/A-logo.png"
+import img2 from "@/assets/shutterstock_2482950157.png"
 
 const Contact = () => {
   const [formData, setFormData] = useState({

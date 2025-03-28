@@ -6,6 +6,8 @@ import logo from "@/assets/Arena-logo.png";
 import Alogo from "@/assets/A-logo.png";
 import bg from "@/assets/bg.jpg";
 
+import Chiffres from "@/components/chiffres";
+
 import card from "@/assets/analog-landscape-city-with-buildings.jpg";
 import card3 from "@/assets/business-people-working-with-ipad-high-angle.jpg";
 import card2 from "@/assets/side-view-old-architect-with-building-plans.jpg";
@@ -29,6 +31,11 @@ import { IoIosArrowDropright } from "react-icons/io";
 import Sanam from "@/assets/Sanam holding.png";
 import alaliamaak from "@/assets/Al-Alia-maak.jpg";
 import "@/app/globals.css";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 
 import { useInView } from "react-intersection-observer";
@@ -64,6 +71,78 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [inView, setInView] = useState(false);
+
+
+
+
+
+  const [isMobilem, setIsMobilem] = useState(false);
+  const [isInViewm, setIsInViewm] = useState(false);
+  const sectionRefm = useRef(null);
+
+const brandImages = [
+    { src: oartf.src, alt: 'im1', isFirst: true },
+    { src: oalia.src, alt: 'im2', isFirst: false },
+    { src: opalm.src, alt: 'im3', isFirst: false },
+    { src: owork.src, alt: 'im4', isFirst: false }
+  ];
+
+
+  // Check mobile screen size
+  useEffect(() => {
+    const checkMobileScreen = () => {
+      setIsMobilem(window.innerWidth < 1024); // Tailwind's lg breakpoint
+    };
+
+    // Check initial screen size
+    checkMobileScreen();
+
+    // Add event listener for screen resize
+    window.addEventListener('resize', checkMobileScreen);
+
+    // Cleanup listener
+    return () => window.removeEventListener('resize', checkMobileScreen);
+  }, []);
+
+  // Intersection Observer to check if section is in view
+  useEffect(() => {
+    if (!isMobilem) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewm(entry.isIntersecting);
+      },
+      { 
+        threshold: 0.1 // Trigger when at least 10% of the section is visible
+      }
+    );
+
+    if (sectionRefm.current) {
+      observer.observe(sectionRefm.current);
+    }
+
+    // Cleanup observer
+    return () => {
+      if (sectionRefm.current) {
+        observer.unobserve(sectionRefm.current);
+      }
+    };
+  }, [isMobilem]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 1024);
@@ -236,45 +315,8 @@ export default function Home() {
       </section>
 
       {/* Section : Vision & Valeurs */}
-      <section
-          id="vision-valeurs"
-          className="marque py-16 text-white text-center flex flex-col min-h-screen justify-start items-center"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 36, 52, 0.7), rgba(0, 36, 52, 0.7)), url(${bg.src})`,
-            backgroundAttachment: 'fixed',
-          }}
-        >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white">CHIFFRES CLES</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-8 w-full max-w-6xl">
-          {/* Stat 1 */}
-          <div className="flex flex-col items-center xl:mt-[20%]">
-          <AnimatedNumber target={100} />
-          
-            <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
-              Développements sur plus de 100 hectares de terrain, marquant l’empreinte d’ARENA dans
-              le secteur de l’immobilier.
-            </p>
-          </div>
-
-          {/* Stat 2 */}
-          <div className="flex flex-col items-center xl:mt-[20%]">
-          <AnimatedNumber target={80} />
-          <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
-              Une équipe de 80 professionnels hautement qualifiés et dédiés à l’excellence.
-            </p>
-          </div>
-
-          {/* Stat 3 */}
-          <div className="flex flex-col items-center xl:mt-[20%]">
-          <AnimatedNumber target={20000} />
-          <p className="text-base text-[15px] xl:text[16px] 2xl:text-[17px] mt-0 max-w-[240px]"style={{fontFamily: 'Raleway', fontWeight: '400'}}>
-              Construction de plus de 20&nbsp;000 unités résidentielles, contribuant à façonner des
-              communautés dynamiques.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <Chiffres/>
+      
 {/* Section : Nos Métiers */}
 <section id="nos-metiers" className="py-16 text-center px-4">
   <h2 className="text-2xl xl:text-3xl 2xl:text-4xl text-gray-900 mb-12" style={{ fontFamily: 'Romelio' }}>NOS METIERS</h2>
@@ -334,30 +376,65 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-      {/* Section : Nos Marques */}
-      <section
-     id="nos-marques" 
-     className="marque py-16 text-center flex flex-col min-h-screen justify-start items-center"
-     style={{ 
-       "--bg-image-url": `url(${Alogo.src})`
-     } as React.CSSProperties}
-   >
+      
+      {/* Desktop View */}
+      <section 
+      ref={sectionRefm}
+      id="nos-marques" 
+      className="marque py-16 text-center flex flex-col min-h-screen justify-start items-center"
+      style={{ 
+        "--bg-image-url": `url(${Alogo.src})`
+      } as React.CSSProperties}
+    >
       <h2 className="text-2xl md:text-3xl lg:text-4xl text-white">NOS MARQUES</h2>
-      <div className="flex flex-col lg:flex-row justify-center items-center mt-52 gap-4 xl:gap-20">
-      <div className="w-auto max-w-xs flex justify-center">
-        <img src={oartf.src} alt="im1" className="h-auto w-auto max-h-[280px] xl:max-h-[550px] mb-[-21%] xl:mb-0 opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
+      
+      {/* Desktop View */}
+      <div className="hidden lg:flex justify-center items-center mt-52 gap-4 xl:gap-20">
+        {brandImages.map((image, index) => (
+          <div key={index} className="w-auto max-w-xs flex justify-center">
+            <img 
+              src={image.src} 
+              alt={image.alt} 
+              className="h-auto w-full max-h-[280px] xl:max-h-[450px] object-contain opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" 
+            />
+          </div>
+        ))}
       </div>
-      <div className="w-auto max-w-xs flex justify-center">
-        <img src={oalia.src} alt="im2" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-      </div>
-      <div className="w-auto max-w-xs flex justify-center">
-        <img src={opalm.src} alt="im3" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />  
-      </div>
-      <div className="w-auto max-w-xs flex justify-center">
-        <img src={owork.src} alt="im4" className="h-auto w-auto max-h-[240px] xl:max-h-[450px] opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" />
-      </div>
-    </div>
+      
+      {/* Mobile Carousel View */}
+      {isMobilem && (
+        <div className="lg:hidden w-full px-4 mt-52">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            pagination={{ 
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active'
+            }}
+            autoplay={isInViewm ? {
+              delay: 3000, // 3 seconds between slides
+              disableOnInteraction: false, // Continue autoplay after user interaction
+            } : false}
+            loop={true}
+            className="brands-swiper"
+          >
+            {brandImages.map((image, index) => (
+              <SwiperSlide key={index} className="flex justify-center items-center">
+                <div className="w-full max-w-xs flex justify-center">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="h-auto w-full max-h-[280px] object-contain opacity-50 hover:opacity-100 hover:scale-110 transition duration-300" 
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </section>
 
       {/* Section : Actualites */}
@@ -386,7 +463,7 @@ export default function Home() {
                       key={idx} 
                       src={src} 
                       alt={`Slide ${index} Image ${idx}`} 
-                      className="xl:w-[92px] xl:h-36 2xl:w-[133px] 2xl:h-48 object-cover mb-2 mt-2" 
+                      className="xl:w-[92px] xl:h-36 2xl:w-36 2xl:h-44 object-cover mb-8 2xl:mb-12 mt-2" 
                     />
                   ))}
                 </div>
@@ -395,13 +472,13 @@ export default function Home() {
                   <img 
                     src={slide.image} 
                     alt={`Slide ${index} Image`} 
-                    className="xl:h-[180px] 2xl:h-[210px] object-contain mb-3 mt-0" 
+                    className="xl:h-[160px] 2xl:h-44 2xl:w-auto object-contain mb-[22px] 2xl:mb-16  mt-0" 
                   />
                 </div>
               )}
 
               <h3 
-                className="xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] text-gray-900 mt-0" 
+                className="xl:text-[14px] xl:tracking-[20px] 2xl:tracking-[50px] leading-6 2xl:leading-8 2xl:text-[16px]  mt-0 mb-auto" 
                 style={{
                   fontFamily: 'Raleway', 
                   letterSpacing: '2px', 
@@ -412,17 +489,20 @@ export default function Home() {
               </h3>
 
               {/* Wrap p inside a flex-col container to push it down */}
-              <div className="flex items-start flex-col h-full">
+              <div className="item-end mb-[-5%]">
+
+              <div className="flex items-start justify-start flex-col h-full">
                 <p 
-                  className="text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto mt-6 mb-2 flex items-center" 
+                  className="text-gray xl:text-[16px] xl:tracking-[20px] 2xl:tracking-[40px] 2xl:text-[20px] mt-auto mt-16 mb-2 flex items-end" 
                   style={{ 
                     fontFamily: 'Raleway', 
                     letterSpacing: '2px', 
                     fontWeight: '400' 
                   }}
-                >
-                  <img className="xl:w-[80px] 2xl:w-[100px] mr-4" src={slide.press} alt="Slide Press" /> - {slide.date}
+                  >
+                  <img className="xl:w-[80px] 2xl:w-[100px] mr-2" src={slide.press} alt="Slide Press" /> - {slide.date}
                 </p>
+                  </div>
               </div>
             </a>
           </div>
@@ -439,7 +519,7 @@ export default function Home() {
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full flex-shrink-0 px-2">
-            <div className="bg-[#cccbcb] p-5 shadow-lg h-full flex flex-col justify-between cursor-pointer">
+            <div className="bg-[#cccbcb] p-5 shadow-lg h-[500px] flex flex-col justify-between cursor-pointer">
               <a href={slide.link} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col">
                 {slide.images ? (
                   <div className="grid grid-cols-2 gap-2">
@@ -462,11 +542,11 @@ export default function Home() {
                   </div>
                 )}
                 <h3 
-                  className="text-base text-gray-900 mt-2 md:mt-4" 
+                  className="text-base text-gray-900 mt-10 md:mt-4" 
                   style={{
                     fontFamily: 'Raleway', 
                     letterSpacing: '1px', 
-                    fontSize: '18px', 
+                    fontSize: '14px', 
                     lineHeight: '1.8', 
                     fontWeight: 'bold'
                   }}
