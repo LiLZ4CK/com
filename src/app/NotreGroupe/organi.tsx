@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
-
+import large from "@/assets/large.png"
 const positions = [
   {
     id: 1,
@@ -132,14 +132,14 @@ export default function organi() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-100 py-12 px-4">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <main className="min-h-screen bg-[#e5e5e5] py-12 px-4">
+      <div className="max-screen mx-auto space-y-16">
         {/* Organisation Section */}
         <section className="text-center space-y-6">
-          <h1 className=" mt-[7%] mb-[5%] text-[35px]"style={{fontFamily: "Romelio"}}>
+          <h1 className=" text-xl mt-8 xl:text-2xl 2xl:text-4xl text-white"style={{fontFamily: "Romelio", color: "#003851"}}>
             ORGANISATION
           </h1>
-          <p className="max-w-7xl mx-auto text-[20px] leading-[50px] tracking-[2px] leading-relaxed" style={{fontFamily: "Raleway"}}>
+          <p className="max-w-6xl mx-auto text-[16px] md:text-3xl tracking-[1px] leading-[30px] lg:text-[20px] text-white 2xl:leading-[50px] xl:tracking-[2px] leading-relaxed" style={{fontFamily: "Raleway", color: "#003851"}}>
             La force du Groupe Arena Property Development repose sur l'agilité de son organisation et l'expertise&nbsp;  
             pluridisciplinaire de ses collaborateurs. Sous la direction de notre CEO, chaque direction s'efforce à&nbsp;  
             atteindre l'excellence tout en garantissant un leadership efficace. Cette configuration permet au Groupe&nbsp; 
@@ -149,91 +149,14 @@ export default function organi() {
 
         {/* Organigramme Section */}
         <section className="text-center  space-y-6">
-          <h1 className=" mt-[9%] mb-[5%] text-[35px]"style={{fontFamily: "Romelio"}}>
+          <h1 className=" mt-[9%] mb-[5%]  text-2xl md:text-3xl lg:text-4xl text-white"style={{fontFamily: "Romelio", color: "#003851"}}>
             ORGANIGRAMME
           </h1>
-          
-          <div className="relative" ref={containerRef}>
-            {/* Organigram Container */}
-            <div className="flex flex-col items-center space-y-12">
-              {/* Level 0 */}
-              <Card id="box-1" className="org-box bg-gray-200 px-6 py-3 w-64 h-20 text-center relative z-10">
-                <p className="text-[18px]" style={{fontFamily: "Raleway"}}>PRÉSIDENT-DIRECTEUR GÉNÉRAL</p>
-              </Card>
-
-              {/* Level 1 */}
-              <div className="flex justify-between w-full gap-4">
-                {positions
-                  .filter((pos) => pos.level === 1)
-                  .map((position) => (
-                    <Card
-                      key={position.id}
-                      id={`box-${position.id}`}
-                      className="org-box bg-[#1B3A4B] text-white px-4 py-3 w-64 h-20 text-center relative z-10"
-                    >
-                      <p className="text-[16px] "style={{fontFamily: "Raleway"}}>{position.title}</p>
-                    </Card>
-                  ))}
-              </div>
-
-              {/* Level 2 */}
-              <div className="flex justify-between w-full gap-4">
-                {positions
-                  .filter((pos) => pos.level === 2)
-                  .map((position) => (
-                    <Card
-                      key={position.id}
-                      id={`box-${position.id}`}
-                      className="org-box border border-[#1B3A4B] px-4 py-3 w-64 h-20 text-center relative z-10"
-                    >
-                      <p className="text-[16px]" style={{fontFamily: "Raleway"}}>{position.title}</p>
-                    </Card>
-                  ))}
-              </div>
-
-              {/* Level 3 */}
-              <div className="flex justify-center gap-4">
-                {positions
-                  .filter((pos) => pos.level === 3)
-                  .map((position) => (
-                    <Card
-                      key={position.id}
-                      id={`box-${position.id}`}
-                      className="org-box border border-[#1B3A4B] px-4 py-3 w-64 h-20 text-center relative z-10"
-                    >
-                      <p className="text-[16px]" style={{fontFamily: "Raleway"}}>{position.title}</p>
-                    </Card>
-                  ))}
-              </div>
-            </div>
-
-            {/* Connecting Lines */}
-            <svg
-              className="absolute top-0 left-0 w-full h-full pointer-events-none"
-              style={{ zIndex: 1 }}
-            >
-              {lines.map((line, index) => {
-                const fromX = line.from.x + line.from.width / 2;
-                const fromY = line.from.y + line.from.height;
-                const toX = line.to.x + line.to.width / 2;
-                const toY = line.to.y;
-
-                return (
-                  <path
-                    key={index}
-                    d={`M ${fromX} ${fromY} L ${fromX} ${(fromY + toY) / 2} L ${toX} ${(fromY + toY) / 2} L ${toX} ${toY}`}
-                    stroke="#1B3A4B"
-                    strokeWidth="1"
-                    fill="none"
-                  />
-                );
-              })}
-            </svg>
-          </div>
+          <img src={large.src} alt="large" className="2xl:w-screen 2xl:h-auto 2xl:px-8"></img>
           
         </section>
         <section className="flex justify-center items-center">
-        <h2 className="text-xl mt-16 xl:text-2xl 2xl:text-4xl font-medium text-[#212046] mb-4">
+        <h2 className="mt-16 text-2xl md:text-3xl lg:text-4xl text-white font-medium text-[#212046] mb-4" style={{fontFamily: "Romelio", color: "#003851"}}>
             GOUVERNANCE
         </h2>
         </section>
